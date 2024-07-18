@@ -1,16 +1,25 @@
 @import 'normalize.css';
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
+@import url('../../assets/font/fontawesome-free-6.5.1-web/css/all.min.css');
+@import "grid.scss";
 
 :root {
     --primary-color: #f81919;
+    --text-color: #333;
+    --white-color: #fff;
+
+    --header-height: 150px;
+    --navbar-height: 34px;
 }
 
 * {
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
 }
 
 html {
-  font-size: 62.5%;
+    font-size: 62.5%;
 }   
 
 body {
@@ -18,4 +27,12 @@ body {
     font-size: 1.6rem;
     line-height: 1.5;
     text-rendering: optimizeSpeed;
+}
+
+.container {
+    max-width: 1200px;
+    width: 100%;
+    padding-left: 15px;
+    padding-right: 15px;
+    margin: auto;
 }
