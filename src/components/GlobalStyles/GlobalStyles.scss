@@ -30,9 +30,37 @@ body {
 }
 
 .container {
-    max-width: 1200px;
-    width: 100%;
-    padding-left: 15px;
-    padding-right: 15px;
-    margin: auto;
+}
+
+.btn {
+    min-width: 90px;
+    height: 34px;
+    text-decoration: none;
+    border: none;
+    border-radius: 2px;
+    padding: 0 12px;
+    cursor: pointer;
+    color: var(--text-color);
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    line-height: 16px;
+    background-color: var(--white-color);
+}
+
+.btn.btn--primary {
+    color: var(--white-color);
+    background-color: var(--primary-color);
+}
+
+.btn.btn--disabled {
+    cursor: default;
+    color: #999;
+    background-color: #888;
+}
+
+.btn.btn--size-s {
+    height: 30px;
+    font-size: 12px;
+    padding: 0 8px;
 }

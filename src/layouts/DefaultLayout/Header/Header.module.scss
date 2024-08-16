@@ -635,9 +635,11 @@
             transition: all 0.3s;
             opacity: 0;
             top: calc(100% + 2px);
+            z-index: 2;
 
             li {
                 margin: 0;
+
                 a {
                     color: var(--black-color);
                     padding: 8px 10px;
@@ -660,7 +662,28 @@
 
 
 
-.contact {
+.phone {
     width: 350px;
     margin-left: auto;
+    display: flex;
+    justify-content: center;
+    margin-top: 4px;
+
+    i {
+        border-radius: 50%;
+        background-color: var(--white-color);
+        padding: 8px 5px;
+        font-size: 1.5rem;
+        height: 30px;
+        margin: auto 12px;
+    }
+
+    div {
+        color: var(--white-color);
+        font-size: 1.2rem;
+
+        span {
+            color: #ccc;
+        }
+    }
 }

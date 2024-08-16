@@ -1,6 +1,6 @@
 import classNames from 'classnames/bind';
 import styles from './Header.module.scss';
-import images from '../../../assets/images';
+import images from '../../../assets/images/hero';
 import Tippy from '@tippyjs/react/headless';
 import 'tippy.js/dist/tippy.css';
 import { Link } from 'react-router-dom';
@@ -168,7 +168,7 @@ function Header() {
                                     {menu.child && (
                                         <ul className={cx('menu-dropdown')}>
                                             {menu.child.map((childItem, index) => (
-                                                <li>
+                                                <li key={index}>
                                                     <Link to={childItem?.path}>{childItem?.name}</Link>
                                                 </li>
                                             ))}
@@ -179,7 +179,12 @@ function Header() {
                         </ul>
                     </div>
 
-                    <div className={cx('contact')}>
+                    <div className={cx('phone')}>
+                        <i className={cx('fa-solid fa-phone-volume')}></i>
+                        <div>
+                            <h3>Hotline</h3>
+                            <span>0123 456 789</span>
+                        </div>
                     </div>
                 </div>
             </div>
