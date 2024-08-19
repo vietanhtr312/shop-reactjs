@@ -11,6 +11,8 @@ const cx = classNames.bind(styles);
 
 function Header() {
 
+    const [isShowHamburger, setIsShowHamburger] = useState(false);
+
     const [menus, setMenus] = useState([
         {
             name: "Trang chủ",
@@ -22,7 +24,6 @@ function Header() {
         },
         {
             name: "Sản phẩm",
-            path: ROUTERS.USER.PRODUCT,
             isShowSubmenu: true,
             child: [
                 {
@@ -49,6 +50,81 @@ function Header() {
 
     return (
         <header className={cx('wrapper')}>
+            <div className={cx('hamburger-menu-overlay', `${isShowHamburger ? 'active' : ''}`)}
+                onClick={() => setIsShowHamburger(false)}>
+            </div>
+
+            <div className={cx('hamburger-menu-wrapper', `${isShowHamburger ? 'show' : ''}`)}>
+                <div className={cx('hamberger-logo')}>
+                    <h2>SHOPPY</h2>
+                </div>
+                <div className={cx('hamburger-menu-cart')}>
+                    <ul>
+                        <li>
+                            <Link to="">
+                                <i className={cx('fa-solid fa-cart-shopping')}><span>1</span></i>
+                            </Link>
+                        </li>
+                    </ul>
+                    <div className={cx('cart-price')}>Giỏ hàng: <span>1.000.000<sup>đ</sup></span></div>
+                </div>
+                <div className={cx("hamburger-menu-widget")}>
+                    <div className={cx("auth")}>
+                        <Link to=""><i className="fa-regular fa-user"></i> Đăng nhập</Link>
+                    </div>
+                </div>
+                <div className={cx("hamburger-menu-nav")}>
+                    <ul>
+                        {menus.map((menu, index) => (
+                            <li key={index}>
+                                <Link to={menu.path} onClick={() => {
+                                    const newMenus = [...menus];
+                                    newMenus[index].isShowSubmenu = !newMenus[index].isShowSubmenu;
+                                    setMenus(newMenus);
+                                }
+                                }>
+                                    {menu.name}
+                                    {menu.child && (
+                                        menu.isShowSubmenu ? (<i className="fa-regular fa-circle-down"></i>)
+                                            : (<i className="fa-regular fa-circle-up"></i>)
+                                    )}
+                                </Link>
+                                {menu.child && (
+                                    <ul className={cx('menu-dropdown', `${menu.isShowSubmenu ? 'show-submenu' : ''}`)}>
+                                        {menu.child.map((childMenu, index) => (
+                                            <li key={index}>
+                                                <Link to={childMenu.path}>
+                                                    {childMenu.name}
+                                                </Link>
+                                            </li>
+                                        ))}
+                                    </ul>
+                                )}
+                            </li>
+                        )
+                        )}
+                    </ul>
+                </div>
+                <div className={cx("hamburger-menu-social")}>
+                    <Link to="">
+                        <i className={cx("fa-brands fa-facebook")}></i>
+                        
+                    </Link>
+                    <Link to="">
+                        <i className={cx("fa-brands fa-instagram")}></i>
+                    </Link>
+                    <Link to="">
+                        <i className={cx("fa-brands fa-twitter")}></i>
+                    </Link>
+                </div>
+                <div className={cx('hamburger-menu-contact')}>
+                    <ul>
+                        <li><i className={cx('fa-solid fa-envelope')}></i> vietanhtr923@gmail.com</li>
+                        <li>Miễn phí đơn hàng từ 200.000<sup>đ</sup></li>
+                    </ul>
+                </div>
+            </div>
+
             <div className={cx("grid wide")}>
                 <nav className={cx("navbar")}>
                     <ul className={cx("nav__list")}>
@@ -114,47 +190,35 @@ function Header() {
                 </nav>
 
                 <div className={cx("search_wrap")}>
-                    <div className={cx("logo")}>
-                        <Link to=""><img src={images.logo} alt="Logo" /></Link>
-                    </div>
+                    <div className='row' style={{ alignItems: 'center' }}>
+                        <div className={cx("logo", "col l-2 m-4")}>
+                            <Link to=""><img src={images.logo} alt="Logo" /></Link>
+                        </div>
 
-                    <div className={cx("search")}>
-                        <Tippy
-                            render={attrs => (
-                                <div className={cx('search-result')} tabIndex="-1" {...attrs}>
-                                    <h3>Kết quả sản phẩm</h3>
-                                    <ul>
-                                        <li>123 </li>
-                                    </ul>
-                                </div>
-                            )}
-                        >
+                        <div className={cx("search", "col l-8 m-6")}>
                             <div className={cx("search-input-wrap")}>
                                 <input type="search" placeholder="Tìm kiếm sản phẩm" spellCheck={false} />
                             </div>
-                        </Tippy>
-                        <button>
-                            <i className={cx("fa-solid fa-magnifying-glass")}></i>
-                        </button>
+                            <button><i className={cx("fa-solid fa-magnifying-glass")}></i></button>
+                        </div>
 
-                    </div>
-
-                    <div className={cx("cart")}>
-                        <div className={cx("cart-wrap")}>
-                            <i className={cx("fa-solid fa-cart-shopping")}></i>
-                            <div>
-                                <div className={cx('cart--no-product')}>
-                                    <img src={images.emptyCart} alt="" />
-                                    <span>Chưa Có Sản Phẩm</span>
+                        <div className={cx("cart", "col l-2 m-0")}>
+                            <div className={cx("cart-wrap")}>
+                                <i className={cx("fa-solid fa-cart-shopping")}></i>
+                                <div>
+                                    <div className={cx('cart--no-product')}>
+                                        <img src={images.emptyCart} alt="" />
+                                        <span>Chưa Có Sản Phẩm</span>
+                                    </div>
                                 </div>
-                                {/* <h4 className={cx("cart-heading")}>Sản phẩm đã thêm</h4>
-                                <ul className={cx("cart-list-item")}>
-                                    <li className={cx("cart-item")}>
-                                    </li>
-                                </ul> */}
-
-                                {/* <a href="./cart.html" className={cx("btn cart-view-cart btn--primary")}>Xem giỏ hàng</a> */}
                             </div>
+                        </div>
+
+                        <div className='col m-1'></div>
+                        <div className={cx('hamburger-open', 'col l-0 m-1')}>
+                            <i className={cx('fa-solid fa-bars')} onClick={() => {
+                                setIsShowHamburger(true);
+                            }}></i>
                         </div>
                     </div>
                 </div>

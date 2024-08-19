@@ -1,13 +1,13 @@
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
-import classNames from 'classnames/bind';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
+import { Link } from "react-router-dom";
+import classNames from 'classnames/bind';
 import styles from './Home.module.scss';
 import categoryImg from '../../assets/images/category';
 import prodImg from "../../assets/images/product";
 import bannerImg from "../../assets/images/banner";
-import { Link } from "react-router-dom";
 
 
 const cx = classNames.bind(styles);
