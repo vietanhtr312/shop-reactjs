@@ -2,14 +2,14 @@ import Header from "./Header";
 import Footer from "../components/Footer";
 import Category from "./Category";
 
-function DefaultLayout({ children }) {
+function DefaultLayout({ children, ...props }) {
     return (
-        <div>
+        <div {...props}>
             <Header />
             <div className="container" style={{ marginBottom: 30 }}>
                 <div>
                     <Category />
-                    <div className="content"> {children} </div>
+                    {children}
                 </div>
             </div>
             <Footer />

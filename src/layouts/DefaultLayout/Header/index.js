@@ -1,15 +1,13 @@
-import classNames from 'classnames/bind';
-import styles from './Header.module.scss';
-import images from '../../../assets/images/hero';
-import Tippy from '@tippyjs/react/headless';
-import 'tippy.js/dist/tippy.css';
 import { Link } from 'react-router-dom';
 import { ROUTERS } from '../../../utils/router';
 import { useState } from 'react';
+import styles from './Header.module.scss';
+import classNames from 'classnames/bind';
+import images from '../../../assets/images/hero';
 
 const cx = classNames.bind(styles);
 
-function Header() {
+function Header(...props) {
 
     const [isShowHamburger, setIsShowHamburger] = useState(false);
 
@@ -195,14 +193,16 @@ function Header() {
                             <Link to=""><img src={images.logo} alt="Logo" /></Link>
                         </div>
 
-                        <div className={cx("search", "col l-8 m-6")}>
-                            <div className={cx("search-input-wrap")}>
-                                <input type="search" placeholder="Tìm kiếm sản phẩm" spellCheck={false} />
+                        <div className='col l-8 m-6 c-0'>
+                            <div className={cx("search")}>
+                                <div className={cx("search-input-wrap")}>
+                                    <input type="search" placeholder="Tìm kiếm sản phẩm" spellCheck={false} />
+                                </div>
+                                <button><i className={cx("fa-solid fa-magnifying-glass")}></i></button>
                             </div>
-                            <button><i className={cx("fa-solid fa-magnifying-glass")}></i></button>
                         </div>
 
-                        <div className={cx("cart", "col l-2 m-0")}>
+                        <div className={cx("cart", "col l-2 m-0 c-0")}>
                             <div className={cx("cart-wrap")}>
                                 <i className={cx("fa-solid fa-cart-shopping")}></i>
                                 <div>
@@ -214,11 +214,17 @@ function Header() {
                             </div>
                         </div>
 
-                        <div className='col m-1'></div>
-                        <div className={cx('hamburger-open', 'col l-0 m-1')}>
+                        <div className={cx('hamburger-open', 'col l-0 m-o-1 m-1 c-o-5 c-1')}>
                             <i className={cx('fa-solid fa-bars')} onClick={() => {
                                 setIsShowHamburger(true);
                             }}></i>
+                        </div>
+
+                        <div style={{marginTop: 10}} className={cx("search", "col l-0 m-0 c-12")}>
+                            <div className={cx("search-input-wrap")}>
+                                <input type="search" placeholder="Tìm kiếm sản phẩm" spellCheck={false} />
+                            </div>
+                            <button><i className={cx("fa-solid fa-magnifying-glass")}></i></button>
                         </div>
                     </div>
                 </div>

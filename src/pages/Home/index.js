@@ -2,12 +2,12 @@ import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
-import { Link } from "react-router-dom";
 import classNames from 'classnames/bind';
 import styles from './Home.module.scss';
 import categoryImg from '../../assets/images/category';
 import prodImg from "../../assets/images/product";
 import bannerImg from "../../assets/images/banner";
+import ProductCard from "../../components/ProductCard";
 
 
 const cx = classNames.bind(styles);
@@ -175,22 +175,9 @@ function Home() {
             const tabPanel = [];
             data[key].products.forEach((item, j) => {
 
-                tabPanel.push(<div className="col l-3">
-                    <div className={cx('featured-item')} key={j}>
-                        <div className={cx('featured-item-pic')}
-                            style={{ backgroundImage: `url(${item.img})` }}>
-                            <ul>
-                                <li><i className="fa-regular fa-eye"></i></li>
-                                <li><i className="fa-solid fa-cart-shopping"></i></li>
-                            </ul>
-                        </div>
-                        <div className={cx('featured-item-text')}>
-                            <h6>
-                                <Link to="/product">{item.name}</Link>
-                            </h6>
-                            <h5>{item.price}<sup>đ</sup></h5>
-                        </div>
-                    </div>
+                tabPanel.push(
+                <div className="col l-3 m-4 c-6" key={j}>
+                    <ProductCard img={item.img} name={item.name} price={item.price}/>
                 </div>)
             })
 
@@ -248,10 +235,10 @@ function Home() {
             <div className={cx("banner-wrapper")}>
                 <div className={cx("banner")}>
                     <div className="row">
-                        <div className={cx("banner-pic col l-6")}>
+                        <div className={cx("banner-pic col l-6 m-6 c-12")}>
                             <img src={bannerImg.banner1} alt="Banner" />
                         </div>
-                        <div className={cx("banner-pic col l-6")}>
+                        <div className={cx("banner-pic col l-6 m-6 c-12")}>
                             <img src={bannerImg.banner2} alt="Banner" />
                         </div>
                     </div>
