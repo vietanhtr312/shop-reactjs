@@ -9,10 +9,26 @@ import prodImg from "../../assets/images/product";
 import bannerImg from "../../assets/images/banner";
 import ProductCard from "../../components/ProductCard";
 
+import React, { useEffect} from "react";
+import { useSelector ,useDispatch } from "react-redux";
+import ProductList from "../../components/ProductList";
+import { fetchAsyncProducts, getAllProducts, getAllProductsStatus } from "../../store/productSlice";
+import { STATUS } from "../../utils/status";
 
 const cx = classNames.bind(styles);
 
 function Home() {
+    const dispatch = useDispatch();
+    
+    useEffect(() => {
+        dispatch(fetchAsyncProducts(10));
+    }, []);
+
+    const products = useSelector(getAllProducts);
+    const productStatus = useSelector(getAllProductsStatus);
+    // console.log(products);
+
+
     const responsive = {
         superLargeDesktop: {
             // the naming can be any, depends on you.
@@ -202,6 +218,13 @@ function Home() {
         );
     }
 
+    let catProductOne = products.filter((product) => product.category === "literature");
+    let catProductTwo = products.filter((product) => product.category === "business");
+    let catProductThree = products.filter((product) => product.category === "mental");
+    let catProductFour = products.filter((product) => product.category === "language");
+
+    // console.log(catProductOne);
+
     return (
         <div className="grid wide">
             <div className={cx('slider-wrapper')}>
@@ -225,8 +248,29 @@ function Home() {
                 <div className={cx('featured')}>
                     <div className={cx('section-title')}>
                         <h2>Sản phẩm nổi bật</h2>
-                        <div className={cx('react-tabs')}>
-                            {renderFeaturedItems(featuredItems)}
+                        <div>
+                            <div className={cx('categories-item')}>
+                                <h3>Sách Văn Học</h3>
+                            </div>
+                                {productStatus === STATUS.LOADING ? 'Loading...' : <ProductList data={catProductOne} />}
+                        </div>
+                        <div>
+                            <div className={cx('categories-item')}>
+                                <h3>Sách Kinh Tế</h3>
+                            </div>
+                                {productStatus === STATUS.LOADING ? 'Loading...' : <ProductList data={catProductTwo} />}
+                        </div>
+                        <div>
+                            <div className={cx('categories-item')}>
+                                <h3>Sách Tâm Lý</h3>
+                            </div>
+                                {productStatus === STATUS.LOADING ? 'Loading...' : <ProductList data={catProductThree} />}
+                        </div>
+                        <div>
+                            <div className={cx('categories-item')}>
+                                <h3>Sách Ngoại Ngữ</h3>
+                            </div>
+                                {productStatus === STATUS.LOADING ? 'Loading...' : <ProductList data={catProductFour} />}
                         </div>
                     </div>
                 </div>

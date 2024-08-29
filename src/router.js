@@ -4,6 +4,7 @@ import DefaultLayout from './layouts/DefaultLayout';
 import Home from './pages/Home';
 import Profile from './pages/Profile';
 import Product from './pages/Product';
+import ProductDetail from './pages/ProductDetail';
 
 
 const renderUserRouter = () => {
@@ -19,6 +20,10 @@ const renderUserRouter = () => {
         {
             path: ROUTERS.USER.PRODUCTS,
             component: <Product />,
+        },
+        {
+            path: ROUTERS.USER.PRODUCT,
+            component: <ProductDetail />,
         },
     ];
 
