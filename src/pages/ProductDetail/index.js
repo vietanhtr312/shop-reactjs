@@ -6,10 +6,9 @@ import { STATUS } from "../../utils/status";
 
 import styles from './ProductDetail.module.scss';
 import classNames from 'classnames/bind';
-import { formatPrice } from "../../utils/fomarter";
-
-import BreadCrumb from "../../layouts/components/BreadCrumb";
-
+import { formatPrice } from "../../utils/formarter";
+import { addToCart, setCartMessageOff, setCartMessageOn, getCartMessageStatus } from "../../store/cartSlice";
+import CartMessage from "../../components/CartMessage";
 
 const cx = classNames.bind(styles);
 
@@ -20,11 +19,17 @@ const ProductDetail = () => {
     const productSingleStatus = useSelector(getSingleProductStatus);
     const [quantity, setQuantity] = useState(1);
     const imgs = product ? product.images : [];
-    console.log(imgs);
+    const cartMessageStatus = useSelector(getCartMessageStatus);
 
     useEffect(() => {
         dispatch(fetchAsyncProductSingle(id));
-    }, []);
+
+        if (cartMessageStatus) {
+            setTimeout(() => {
+                dispatch(setCartMessageOff());
+            }, 2000);
+        }
+    }, [cartMessageStatus]);
 
     if (productSingleStatus === STATUS.LOADING) {
         return <div>Loading...</div>
@@ -46,6 +51,13 @@ const ProductDetail = () => {
                 temp = 1;
             return temp;
         })
+    }
+
+    const addToCartHandler = (product) => {
+        let total = product.price * quantity;
+
+        dispatch(addToCart({...product, quantity: quantity, total: total}));
+        dispatch(setCartMessageOn(true));
     }
 
 
@@ -82,7 +94,7 @@ const ProductDetail = () => {
                                     <button onClick={() => decreaseQty()}>
                                         <i className="fas fa-minus"></i>
                                     </button>
-                                    <input type="text" value={quantity} />
+                                    <div className={cx("qty")}>{quantity}</div>
                                     <button onClick={() => increaseQty()}>
                                         <i className="fas fa-plus"></i>
                                     </button>
@@ -92,7 +104,9 @@ const ProductDetail = () => {
                                 product?.stock === 0 ? (<div className={cx('no-stock')}>Hết hàng</div>) : ("")
                             }
                             <div className={cx('btn-buy')}>
-                                <button className="btn btn--primary">
+                                <button className="btn btn--primary" onClick={() => {
+                                    addToCartHandler(product);
+                                }}>
                                     <i className="fas fa-cart-plus"></i>
                                     Thêm vào giỏ hàng
                                 </button>
@@ -111,6 +125,8 @@ const ProductDetail = () => {
                     </div>
                 </div>
             </div>
+
+            {cartMessageStatus ? <CartMessage message="Đã thêm vào giỏ hàng" /> : ""}
         </div>
     )
 }

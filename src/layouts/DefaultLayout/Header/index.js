@@ -1,50 +1,27 @@
 import { Link } from 'react-router-dom';
 import { ROUTERS } from '../../../utils/router';
-import { useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { useEffect, useState } from 'react';
 import styles from './Header.module.scss';
 import classNames from 'classnames/bind';
 import images from '../../../assets/images/hero';
+import { getAllCart, getCartItemsCount, getCartTotal } from '../../../store/cartSlice';
+import CartModal from '../../../components/CartModal';
 
 const cx = classNames.bind(styles);
 
 function Header(...props) {
+    const dispatch = useDispatch();
+    const carts = useSelector(getAllCart);
+    const itemsCount = useSelector(getCartItemsCount);
+
+    useEffect(() => {
+        dispatch(getCartTotal());
+    }, [carts]);
+
+    // console.log('carts', carts);
 
     const [isShowHamburger, setIsShowHamburger] = useState(false);
-
-    const [menus, setMenus] = useState([
-        {
-            name: "Trang chủ",
-            path: ROUTERS.USER.HOME,
-        },
-        {
-            name: "Cửa hàng",
-            path: ROUTERS.USER.PRODUCT,
-        },
-        {
-            name: "Sản phẩm",
-            isShowSubmenu: true,
-            child: [
-                {
-                    name: "Sản phẩm 1",
-                    path: ROUTERS.USER.PRODUCT,
-                },
-                {
-                    name: "Sản phẩm 2",
-                    path: ROUTERS.USER.PRODUCT,
-                }
-            ]
-        },
-        {
-            name: "Liên hệ",
-            path: ROUTERS.USER.CONTACT,
-        },
-        {
-            name: "Bài viết",
-            path: ROUTERS.USER.BLOG,
-        }
-    ]);
-
-
 
     return (
         <header className={cx('wrapper')}>
@@ -73,40 +50,11 @@ function Header(...props) {
                 </div>
                 <div className={cx("hamburger-menu-nav")}>
                     <ul>
-                        {menus.map((menu, index) => (
-                            <li key={index}>
-                                <Link to={menu.path} onClick={() => {
-                                    const newMenus = [...menus];
-                                    newMenus[index].isShowSubmenu = !newMenus[index].isShowSubmenu;
-                                    setMenus(newMenus);
-                                }
-                                }>
-                                    {menu.name}
-                                    {menu.child && (
-                                        menu.isShowSubmenu ? (<i className="fa-regular fa-circle-down"></i>)
-                                            : (<i className="fa-regular fa-circle-up"></i>)
-                                    )}
-                                </Link>
-                                {menu.child && (
-                                    <ul className={cx('menu-dropdown', `${menu.isShowSubmenu ? 'show-submenu' : ''}`)}>
-                                        {menu.child.map((childMenu, index) => (
-                                            <li key={index}>
-                                                <Link to={childMenu.path}>
-                                                    {childMenu.name}
-                                                </Link>
-                                            </li>
-                                        ))}
-                                    </ul>
-                                )}
-                            </li>
-                        )
-                        )}
                     </ul>
                 </div>
                 <div className={cx("hamburger-menu-social")}>
                     <Link to="">
                         <i className={cx("fa-brands fa-facebook")}></i>
-                        
                     </Link>
                     <Link to="">
                         <i className={cx("fa-brands fa-instagram")}></i>
@@ -204,13 +152,11 @@ function Header(...props) {
 
                         <div className={cx("cart", "col l-2 m-0 c-0")}>
                             <div className={cx("cart-wrap")}>
+                                <Link to={ROUTERS.CART}>
                                 <i className={cx("fa-solid fa-cart-shopping")}></i>
-                                <div>
-                                    <div className={cx('cart--no-product')}>
-                                        <img src={images.emptyCart} alt="" />
-                                        <span>Chưa Có Sản Phẩm</span>
-                                    </div>
-                                </div>
+                                <span className={cx('cart-qty')}>{itemsCount}</span>
+                                </Link>
+                                <CartModal className={cx('cart-modal')} carts={carts} />
                             </div>
                         </div>
 
@@ -228,35 +174,6 @@ function Header(...props) {
                         </div>
                     </div>
                 </div>
-
-                {/* <div className={cx('menu-wrapper')}>
-                    <div className={cx('menu')}>
-                        <ul>
-                            {menus?.map((menu, index) => (
-                                <li key={index} className={index === 0 ? cx("active") : ""}>
-                                    <Link to={menu?.path}>{menu?.name}</Link>
-                                    {menu.child && (
-                                        <ul className={cx('menu-dropdown')}>
-                                            {menu.child.map((childItem, index) => (
-                                                <li key={index}>
-                                                    <Link to={childItem?.path}>{childItem?.name}</Link>
-                                                </li>
-                                            ))}
-                                        </ul>
-                                    )}
-                                </li>
-                            ))}
-                        </ul>
-                    </div>
-
-                    <div className={cx('phone')}>
-                        <i className={cx('fa-solid fa-phone-volume')}></i>
-                        <div>
-                            <h3>Hotline</h3>
-                            <span>0123 456 789</span>
-                        </div>
-                    </div>
-                </div> */}
             </div>
         </header>);
 }

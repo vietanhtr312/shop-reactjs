@@ -5,6 +5,7 @@ import Home from './pages/Home';
 import Profile from './pages/Profile';
 import Product from './pages/Product';
 import ProductDetail from './pages/ProductDetail';
+import Cart from './pages/Cart';
 
 
 const renderUserRouter = () => {
@@ -25,6 +26,10 @@ const renderUserRouter = () => {
             path: ROUTERS.USER.PRODUCT,
             component: <ProductDetail />,
         },
+        {
+            path: ROUTERS.USER.CART,
+            component: <Cart />,
+        }
     ];
 
     return (
