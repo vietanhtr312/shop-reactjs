@@ -1,18 +1,15 @@
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
-import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
-import 'react-tabs/style/react-tabs.css';
 import classNames from 'classnames/bind';
 import styles from './Home.module.scss';
 import categoryImg from '../../assets/images/category';
-import prodImg from "../../assets/images/product";
 import bannerImg from "../../assets/images/banner";
-import ProductCard from "../../components/ProductCard";
 
 import React, { useEffect} from "react";
-import { useSelector ,useDispatch } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import ProductList from "../../components/ProductList";
 import { fetchAsyncProducts, getAllProducts, getAllProductsStatus } from "../../store/productSlice";
+import { fetchAsyncCategories, getAllCategories, getAllCategoriesStatus } from "../../store/categorySlice";
 import { STATUS } from "../../utils/status";
 
 const cx = classNames.bind(styles);
@@ -26,8 +23,6 @@ function Home() {
 
     const products = useSelector(getAllProducts);
     const productStatus = useSelector(getAllProductsStatus);
-    // console.log(products);
-
 
     const responsive = {
         superLargeDesktop: {
@@ -72,158 +67,11 @@ function Home() {
         }
     ];
 
-    const featuredItems = {
-        all: {
-            title: 'Tất cả',
-            products: [
-                {
-                    img: prodImg.prod1,
-                    name: 'Hai Vạn Dặm Dưới Biển',
-                    price: 74.250,
-                },
-                {
-                    img: prodImg.prod2,
-                    name: 'Đám Trẻ Ở Đại Dương Đen',
-                    price: 61.380,
-                },
-                {
-                    img: prodImg.prod3,
-                    name: 'MBA Bằng Hình',
-                    price: 151.200,
-                },
-                {
-                    img: prodImg.prod4,
-                    name: 'Chiến Tranh Tiền Tệ',
-                    price: 169.000,
-                },
-                {
-                    img: prodImg.prod5,
-                    name: 'Sếp Ơi! Tại Sao Không Thăng Chức Cho Tôi?',
-                    price: 34.300,
-                },
-                {
-                    img: prodImg.prod6,
-                    name: 'Văn Hóa E-Mail: Xây Dựng Hình Ảnh Cá Nhân Qua E-Mail',
-                    price: 37.800,
-                },
-                {
-                    img: prodImg.prod7,
-                    name: 'Giải Thích Ngữ Pháp Tiếng Anh (Tái Bản 2024)',
-                    price: 143.000,
-                },
-                {
-                    img: prodImg.prod8,
-                    name: 'Destination B2 - Grammar And Vocabulary with Answer Key',
-                    price: 118.300,
-                },
-            ],
-        },
+    let catProductOne = products.filter((product) => product.category === "Văn học");
+    let catProductTwo = products.filter((product) => product.category === "Kinh tế");
+    let catProductThree = products.filter((product) => product.category === "Tâm lý");
+    let catProductFour = products.filter((product) => product.category === "Ngoại ngữ");
 
-        literature: {
-            title: 'Văn học',
-            products: [
-                {
-                    img: prodImg.prod1,
-                    name: 'Hai Vạn Dặm Dưới Biển',
-                    price: 74.250,
-                },
-                {
-                    img: prodImg.prod2,
-                    name: 'Đám Trẻ Ở Đại Dương Đen',
-                    price: 61.380,
-                },
-            ],
-        },
-        economic: {
-            title: 'Kinh tế',
-            products: [
-                {
-                    img: prodImg.prod3,
-                    name: 'MBA Bằng Hình',
-                    price: 151.200,
-                },
-                {
-                    img: prodImg.prod4,
-                    name: 'Chiến Tranh Tiền Tệ',
-                    price: 169.000,
-                },
-            ],
-        },
-        mentality: {
-            title: 'Tâm lý',
-            products: [
-                {
-                    img: prodImg.prod5,
-                    name: 'Sếp Ơi! Tại Sao Không Thăng Chức Cho Tôi?',
-                    price: 34.300,
-                },
-                {
-                    img: prodImg.prod6,
-                    name: 'Văn Hóa E-Mail: Xây Dựng Hình Ảnh Cá Nhân Qua E-Mail',
-                    price: 37.800,
-                },
-            ],
-        },
-        forein: {
-            title: 'Ngoại ngữ',
-            products: [
-                {
-                    img: prodImg.prod7,
-                    name: 'Giải Thích Ngữ Pháp Tiếng Anh (Tái Bản 2024)',
-                    price: 143.000,
-                },
-                {
-                    img: prodImg.prod8,
-                    name: 'Destination B2 - Grammar And Vocabulary with Answer Key',
-                    price: 118.300,
-                },
-            ],
-        },
-    };
-
-    const renderFeaturedItems = (data) => {
-        const tabList = [];
-        const tabPanels = [];
-
-        Object.keys(data).forEach((key, index) => {
-            tabList.push(<Tab key={index}>{data[key].title} </Tab>)
-
-            const tabPanel = [];
-            data[key].products.forEach((item, j) => {
-
-                tabPanel.push(
-                <div className="col l-3 m-4 c-6" key={j}>
-                    <ProductCard img={item.img} name={item.name} price={item.price}/>
-                </div>)
-            })
-
-            tabPanels.push(tabPanel);
-        });
-
-
-        return (
-            <div>
-                <Tabs>
-                    <TabList>{tabList}</TabList>
-
-                    <div>
-                        {tabPanels.map((item, index) => (
-                            <TabPanel className={cx('react-tabs__tab-panel')} key={index}>
-                                {item}
-                            </TabPanel>
-                        ))}
-                    </div>
-                </Tabs>
-            </div>
-        );
-    }
-
-    let catProductOne = products.filter((product) => product.category === "literature");
-    let catProductTwo = products.filter((product) => product.category === "business");
-    let catProductThree = products.filter((product) => product.category === "mental");
-    let catProductFour = products.filter((product) => product.category === "language");
-
-    // console.log(catProductOne);
 
     return (
         <div className="grid wide">

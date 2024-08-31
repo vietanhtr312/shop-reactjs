@@ -1,4 +1,4 @@
-import { generatePath, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import classNames from 'classnames/bind';
 import styles from './ProductCard.module.scss';
 import { formatPrice } from "../../utils/fomarter";

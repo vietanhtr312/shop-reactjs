@@ -229,7 +229,7 @@ function Header(...props) {
                     </div>
                 </div>
 
-                <div className={cx('menu-wrapper')}>
+                {/* <div className={cx('menu-wrapper')}>
                     <div className={cx('menu')}>
                         <ul>
                             {menus?.map((menu, index) => (
@@ -256,7 +256,7 @@ function Header(...props) {
                             <span>0123 456 789</span>
                         </div>
                     </div>
-                </div>
+                </div> */}
             </div>
         </header>);
 }

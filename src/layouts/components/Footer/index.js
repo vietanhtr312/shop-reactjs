@@ -109,11 +109,12 @@ function Footer() {
 
             <div className={cx('bottom')} >
                 <div className={cx('grid wide')}>
-                    <div className={cx('policy')}>
-                        <a href="" className={cx('policy-item')}>CHÍNH SÁCH BẢO MẬT</a>
-                        <a href="" className={cx('policy-item')}>QUY CHẾ HOẠT ĐỘNG</a>
-                        <a href="" className={cx('policy-item')}>CHÍNH SÁCH VẬN CHUYỂN</a>
-                        <a href="" className={cx('policy-item')}>CHÍNH SÁCH TRẢ HÀNG VÀ HOÀN TIỀN</a>
+                    <div className={cx('policy', 'row')}>
+                        <a href="" className={cx('policy-item', 'col l-o-2 l-2 m-3 c-6')}>CHÍNH SÁCH BẢO MẬT</a>
+                        <a href="" className={cx('policy-item', 'col l-2 m-3 c-6')}>QUY CHẾ HOẠT ĐỘNG</a>
+                        <a href="" className={cx('policy-item', 'col l-2 m-3 c-6')}>CHÍNH SÁCH VẬN CHUYỂN</a>
+                        <a href="" className={cx('policy-item', 'col l-2 m-3 c-6')}>CHÍNH SÁCH TRẢ HÀNG VÀ HOÀN TIỀN</a>
+                        <div className='col l-2'></div>
                     </div>
 
                     <p className={cx('text')}>

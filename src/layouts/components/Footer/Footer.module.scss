@@ -75,14 +75,11 @@
 
 
 .policy {
-    padding: 0 200px;
     display: flex;
     justify-content: space-between;
     font-size: 13px;
     margin-bottom: 32px;
     text-align: center;
-
-    
 }
 
 .policy-item {
@@ -90,6 +87,7 @@
         height: 14px;
         color: rgba(0, 0, 0, .54);
         position: relative;
+        margin-bottom: 10px;
     }
 
 .policy-item--separate::after {

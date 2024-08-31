@@ -1,14 +1,22 @@
+.wrapper {
+    padding: 20px;
+}
+
 .product-detail-pic {
     display: flex;
     column-gap: 10px;
 
     .img {
-        flex: 0 0 65%;
+        width: 65%;
         object-fit: cover;
+
+        img {
+            width: 100%;
+        }
     }
 
     .main {
-        flex: 0 0 35%;
+        width: 35%;
         display: grid;
         align-items: stretch;
 
@@ -24,17 +32,71 @@
 }
 
 .product-detail-text {
-    h2 {
+    .title {
         color: #252525;
-        font-weight: 700;
+        font-size: 24px;
+        font-weight: 500;
+        margin-bottom: 20px;
     }
 
-    .seen-icon {
+    .info {
+        span {
+            font-weight: 500;
+        }
+    }
+
+    .price {
+        font-size: 24px;
+        font-weight: 500;
+
+        span {
+            color: var(--primary-color);
+        }
+    }
+
+    .quantity {
+        border-top: 1px solid #ebebeb;
+        padding-top: 20px;
+        margin-top: 30px;
         display: flex;
         align-items: center;
-        font-size: 13px;
-        line-height: 30px;
-        column-gap: 5px;
+
+        .text {
+            font-size: 20px;
+            font-weight: 500;
+        }
+        
+        .btn {
+            margin-left: 20px;
+            display: flex;
+
+            i {
+                font-size: 16px;
+                width: 30px;
+            }
+        }
+
+        input {
+            width: 40px;
+            text-align: center;
+            font-size: 16px;
+            border: 1px solid #ebebeb;
+            border-radius: 5px;
+        }
+    }
+
+    .btn-buy {
+        margin-top: 20px;
+
+        button {
+            i {
+                font-size: 20px;
+                margin-right: 10px;
+            }
+
+            font-size: 16px;
+            margin-right: 10px;
+        }
     }
 
     p {
@@ -53,10 +115,6 @@
             display: flex;
             column-gap: 20px;
             line-height: 35px;
-
-            b {
-                width: 150px;
-            }
 
             span {
                 display: flex;

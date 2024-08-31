@@ -5,7 +5,7 @@ import { STATUS } from '../utils/status';
 const initialState = {
     products: [],
     productsStatus: STATUS.IDLE,
-    productSingle: {},
+    productSingle: [],
     productSingleStatus: STATUS.IDLE,
 }
 
@@ -49,7 +49,7 @@ export const fetchAsyncProducts = createAsyncThunk('products/fetch', async (limi
 })
 
 export const fetchAsyncProductSingle = createAsyncThunk('product-single/fetch', async (id) => {
-    const response = await fetch(`${BASE_URL}/products/${id}`);
+    const response = await fetch(`${BASE_URL}products/${id}`);
     const data = await response.json();
     return data;
 })
@@ -57,6 +57,6 @@ export const fetchAsyncProductSingle = createAsyncThunk('product-single/fetch', 
 export const getAllProducts = (state) => state.product.products;
 export const getAllProductsStatus = (state) => state.product.productsStatus;
 export const getProductSingle = (state) => state.product.productSingle;
-export const getSingleProductStatus = (state) => state.product.productSingleState;
+export const getSingleProductStatus = (state) => state.product.productSingleStatus;
 
 export default productSlice.reducer;
