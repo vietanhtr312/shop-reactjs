@@ -9,7 +9,6 @@ import { ROUTERS } from '../../utils/router';
 const cx = classNames.bind(styles);
 
 const CartModal = ({ carts }) => {
-    console.log(carts);
     return (
         <div className={cx('cart-modal')}>
             {(carts?.length > 0) ? (

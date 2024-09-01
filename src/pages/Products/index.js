@@ -1,17 +1,17 @@
 import { memo } from "react";
 import { Link } from "react-router-dom";
-import styles from './Product.module.scss';
-import classNames from 'classnames/bind';
-import { categories } from "../../layouts/DefaultLayout/Category";
 import { ROUTERS } from "../../utils/router";
+import styles from './Products.module.scss';
+import classNames from 'classnames/bind';
 import ProductCard from "../../components/ProductCard";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchAsyncProducts, getAllProducts, getAllProductsStatus } from "../../store/productSlice";
+import { fetchAsyncCategories, getAllCategories } from "../../store/categorySlice";
 import { useEffect } from "react";
 
 const cx = classNames.bind(styles);
 
-const Product = () => {
+const Products = () => {
     const sorts = [
         "Mới nhất",
         "Bán chạy",
@@ -27,7 +27,12 @@ const Product = () => {
     }, []);
 
     const products = useSelector(getAllProducts);
-    const productStatus = useSelector(getAllProductsStatus);
+
+    useEffect(() => {
+        dispatch(fetchAsyncCategories());
+    }, []);
+
+    const categories = useSelector(getAllCategories);
 
 
     return (
@@ -65,7 +70,7 @@ const Product = () => {
                                     </div>
                                 </div>
                                 <div className={cx('sidebar-item')}>
-                                    <h2>Thể loại khác</h2>
+                                    <h2>Thể loại</h2>
                                     <ul>
                                         {categories.map((category, index) => (
                                             <li key={index}>
@@ -92,4 +97,4 @@ const Product = () => {
     )
 }
 
-export default memo(Product);
+export default memo(Products);

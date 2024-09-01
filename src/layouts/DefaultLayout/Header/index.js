@@ -6,20 +6,22 @@ import styles from './Header.module.scss';
 import classNames from 'classnames/bind';
 import images from '../../../assets/images/hero';
 import { getAllCart, getCartItemsCount, getCartTotal } from '../../../store/cartSlice';
+import { getAllCategories, fetchAsyncCategories } from '../../../store/categorySlice';
 import CartModal from '../../../components/CartModal';
+import { formatPrice } from '../../../utils/formarter';
 
 const cx = classNames.bind(styles);
 
 function Header(...props) {
     const dispatch = useDispatch();
     const carts = useSelector(getAllCart);
-    const itemsCount = useSelector(getCartItemsCount);
+    const { itemsCount, totalAmount } = useSelector(state => state.cart);
+
+    const categories = useSelector(getAllCategories);
 
     useEffect(() => {
         dispatch(getCartTotal());
     }, [carts]);
-
-    // console.log('carts', carts);
 
     const [isShowHamburger, setIsShowHamburger] = useState(false);
 
@@ -37,11 +39,11 @@ function Header(...props) {
                     <ul>
                         <li>
                             <Link to="">
-                                <i className={cx('fa-solid fa-cart-shopping')}><span>1</span></i>
+                                <i className={cx('fa-solid fa-cart-shopping')}><span>{itemsCount}</span></i>
                             </Link>
                         </li>
                     </ul>
-                    <div className={cx('cart-price')}>Giỏ hàng: <span>1.000.000<sup>đ</sup></span></div>
+                    <Link to={ROUTERS.USER.CART} className={cx('cart-price')}>Giỏ hàng: <span>{formatPrice(totalAmount)}</span></Link>
                 </div>
                 <div className={cx("hamburger-menu-widget")}>
                     <div className={cx("auth")}>
@@ -50,6 +52,11 @@ function Header(...props) {
                 </div>
                 <div className={cx("hamburger-menu-nav")}>
                     <ul>
+                        {categories && categories?.map((category, index) => (
+                            <li key={index}>
+                                <Link to={ROUTERS.USER.PRODUCTS}>Sách {category?.title}</Link>
+                            </li>
+                        ))}
                     </ul>
                 </div>
                 <div className={cx("hamburger-menu-social")}>
@@ -153,11 +160,21 @@ function Header(...props) {
                         <div className={cx("cart", "col l-2 m-0 c-0")}>
                             <div className={cx("cart-wrap")}>
                                 <Link to={ROUTERS.CART}>
-                                <i className={cx("fa-solid fa-cart-shopping")}></i>
-                                <span className={cx('cart-qty')}>{itemsCount}</span>
+                                    <i className={cx("fa-solid fa-cart-shopping")}></i>
+                                    <span className={cx('cart-qty')}>{itemsCount}</span>
                                 </Link>
                                 <CartModal className={cx('cart-modal')} carts={carts} />
                             </div>
+                        </div>
+
+                        <div className={cx('categories')}>
+                            <ul>
+                                {categories && categories?.map((category, index) => (
+                                    <li key={index}>
+                                        <Link to={`/products/category/${category?.title}`}>Sách {category?.title}</Link>
+                                    </li>
+                                ))}
+                            </ul>
                         </div>
 
                         <div className={cx('hamburger-open', 'col l-0 m-o-1 m-1 c-o-5 c-1')}>
@@ -166,7 +183,7 @@ function Header(...props) {
                             }}></i>
                         </div>
 
-                        <div style={{marginTop: 10}} className={cx("search", "col l-0 m-0 c-12")}>
+                        <div style={{ marginTop: 10 }} className={cx("search", "col l-0 m-0 c-12")}>
                             <div className={cx("search-input-wrap")}>
                                 <input type="search" placeholder="Tìm kiếm sản phẩm" spellCheck={false} />
                             </div>

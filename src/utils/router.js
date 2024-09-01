@@ -5,5 +5,6 @@ export const ROUTERS = {
         PRODUCTS: "/products",  
         PRODUCT: "/products/product/:id",  
         CART: "/cart",
+        CATEGORYPRODUCT: "/products/category/:category",
     }
 }

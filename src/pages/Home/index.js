@@ -2,27 +2,33 @@ import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import classNames from 'classnames/bind';
 import styles from './Home.module.scss';
-import categoryImg from '../../assets/images/category';
 import bannerImg from "../../assets/images/banner";
+import { Link } from "react-router-dom";
 
-import React, { useEffect} from "react";
+import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import ProductList from "../../components/ProductList";
 import { fetchAsyncProducts, getAllProducts, getAllProductsStatus } from "../../store/productSlice";
-import { fetchAsyncCategories, getAllCategories, getAllCategoriesStatus } from "../../store/categorySlice";
+import { fetchAsyncCategories, getAllCategories } from "../../store/categorySlice";
 import { STATUS } from "../../utils/status";
 
 const cx = classNames.bind(styles);
 
 function Home() {
     const dispatch = useDispatch();
-    
+
     useEffect(() => {
         dispatch(fetchAsyncProducts(10));
     }, []);
 
     const products = useSelector(getAllProducts);
     const productStatus = useSelector(getAllProductsStatus);
+
+    useEffect(() => {
+        dispatch(fetchAsyncCategories());
+    }, []);
+
+    const categories = useSelector(getAllCategories);
 
     const responsive = {
         superLargeDesktop: {
@@ -44,29 +50,6 @@ function Home() {
         }
     };
 
-    const sliderItems = [
-        {
-            img: categoryImg.cat1,
-            title: 'Văn học'
-        },
-        {
-            img: categoryImg.cat2,
-            title: 'Tâm lý học'
-        },
-        {
-            img: categoryImg.cat3,
-            title: 'Ngoại ngữ'
-        },
-        {
-            img: categoryImg.cat4,
-            title: 'Kinh tế'
-        },
-        {
-            img: categoryImg.cat5,
-            title: 'Thiếu nhi'
-        }
-    ];
-
     let catProductOne = products.filter((product) => product.category === "Văn học");
     let catProductTwo = products.filter((product) => product.category === "Kinh tế");
     let catProductThree = products.filter((product) => product.category === "Tâm lý");
@@ -78,16 +61,14 @@ function Home() {
             <div className={cx('slider-wrapper')}>
                 <div className={cx('slider')}>
                     <Carousel responsive={responsive}>
-                        {
-                            sliderItems.map((item, index) => {
-                                return (
-                                    <div className={cx('slider-item')} key={index}>
-                                        <img src={item.img} alt={item.title} />
-                                        <p>{item.title}</p>
-                                    </div>
-                                );
-                            })
-                        }
+                        {categories.map((item, index) => {
+                            return (
+                                <Link to={`/products/category/${item?.title}`} className={cx('slider-item')} key={index}>
+                                    <img src={item?.images} alt={item?.title} />
+                                    <p>{item?.title}</p>
+                                </Link>
+                            )
+                        })}
                     </Carousel>
                 </div>
             </div>
@@ -100,25 +81,25 @@ function Home() {
                             <div className={cx('categories-item')}>
                                 <h3>Sách Văn Học</h3>
                             </div>
-                                {productStatus === STATUS.LOADING ? 'Loading...' : <ProductList data={catProductOne} />}
+                            {productStatus === STATUS.LOADING ? 'Loading...' : <ProductList data={catProductOne} />}
                         </div>
                         <div>
                             <div className={cx('categories-item')}>
                                 <h3>Sách Kinh Tế</h3>
                             </div>
-                                {productStatus === STATUS.LOADING ? 'Loading...' : <ProductList data={catProductTwo} />}
+                            {productStatus === STATUS.LOADING ? 'Loading...' : <ProductList data={catProductTwo} />}
                         </div>
                         <div>
                             <div className={cx('categories-item')}>
                                 <h3>Sách Tâm Lý</h3>
                             </div>
-                                {productStatus === STATUS.LOADING ? 'Loading...' : <ProductList data={catProductThree} />}
+                            {productStatus === STATUS.LOADING ? 'Loading...' : <ProductList data={catProductThree} />}
                         </div>
                         <div>
                             <div className={cx('categories-item')}>
                                 <h3>Sách Ngoại Ngữ</h3>
                             </div>
-                                {productStatus === STATUS.LOADING ? 'Loading...' : <ProductList data={catProductFour} />}
+                            {productStatus === STATUS.LOADING ? 'Loading...' : <ProductList data={catProductFour} />}
                         </div>
                     </div>
                 </div>

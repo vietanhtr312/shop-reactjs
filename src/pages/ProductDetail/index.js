@@ -86,7 +86,7 @@ const ProductDetail = () => {
                                 <div className="col l-6">NXB: <span>{product?.publisher}</span></div>
                                 <div className="col l-6">Rating: <span>{product?.rating}</span></div>
                             </div>
-                            <p>{product?.description}</p>
+                            <p className={cx('desc')}>{product?.description}</p>
                             <div className={cx('price')}>Giá: <span>{formatPrice(product?.price)}</span></div>
                             <div className={cx('quantity')}>
                                 <div className={cx('text')}>Số lượng:</div>

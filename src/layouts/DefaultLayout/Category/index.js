@@ -4,20 +4,21 @@ import { ROUTERS } from '../../../utils/router';
 import styles from './Category.module.scss';
 import classNames from 'classnames/bind';
 import images from '../../../assets/images/banner';
+import { useDispatch, useSelector } from 'react-redux';
+import { getAllCategories, fetchAsyncCategories } from '../../../store/categorySlice';
 
 const cx = classNames.bind(styles);
-
-export const categories = [
-    "Sách Văn học",
-    "Sách Tâm lý",
-    "Sách Kinh tế",
-    "Sách Ngoại ngữ'",
-]
 
 function Category() {
     const location = useLocation();
     const [isHome, setIsHome] = useState(location.pathname.length <= 1);
     const [isShowCategory, setIsShowCategory] = useState(isHome);
+    const dispatch = useDispatch();
+    useEffect(() => {
+        dispatch(fetchAsyncCategories());
+    }, []);
+
+    const categories = useSelector(getAllCategories);
 
 
 
@@ -43,9 +44,9 @@ function Category() {
                                         <li className={cx('main')}>
                                             <Link href="">Nhà Sách Online</Link>
                                         </li>
-                                        {categories.map((category, index) => (
+                                        {categories && categories?.map((category, index) => (
                                             <li key={index}>
-                                                <Link to={ROUTERS.USER.PRODUCTS}>{category}</Link>
+                                                <Link to={`products/category/${category?.title}`}>Sách {category?.title}</Link>
                                             </li>
                                         ))}
                                     </ul>
@@ -57,7 +58,7 @@ function Category() {
                                         <span>Sách trong nước và nước ngoài</span>
                                         <h2>Sách chính hãng 100%</h2>
                                         <p>Miễn phí giao hàng trên toàn quốc</p>
-                                        <Link to className='btn btn--primary'>Mua ngay</Link>
+                                        <Link to={ROUTERS.USER.PRODUCTS} className='btn btn--primary'>Mua ngay</Link>
                                     </div>
                                 </div>
                             </div>

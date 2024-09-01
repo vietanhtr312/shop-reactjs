@@ -3,9 +3,10 @@ import { ROUTERS } from './utils/router';
 import DefaultLayout from './layouts/DefaultLayout';
 import Home from './pages/Home';
 import Profile from './pages/Profile';
-import Product from './pages/Product';
+import Products from './pages/Products';
 import ProductDetail from './pages/ProductDetail';
 import Cart from './pages/Cart';
+import CategoryProduct from './pages/CategoryProduct';
 
 
 const renderUserRouter = () => {
@@ -20,7 +21,7 @@ const renderUserRouter = () => {
         },
         {
             path: ROUTERS.USER.PRODUCTS,
-            component: <Product />,
+            component: <Products />,
         },
         {
             path: ROUTERS.USER.PRODUCT,
@@ -29,6 +30,10 @@ const renderUserRouter = () => {
         {
             path: ROUTERS.USER.CART,
             component: <Cart />,
+        },
+        {
+            path: ROUTERS.USER.CATEGORYPRODUCT,
+            component: <CategoryProduct />,
         }
     ];
 

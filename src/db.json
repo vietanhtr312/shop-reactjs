@@ -267,22 +267,306 @@
     {
       "id": 1,
       "title": "Văn học",
-      "images": "../assets/images/categories/cate_homepage_vanhoc.webp"
+      "images": "https://cdn0.fahasa.com/media/wysiwyg/Thang-06-2024/cate_homepage_vanhoc.jpg"
     },
     {
       "id": 2,
-      "title": "business",
-      "images": "../assets/images/categories/cate_homepage_kinhte.webp"
-    },
-    {
-      "id": 2,
-      "title": "mental",
-      "images": "../assets/images/categories/cate_homepage_tamly.webp"
+      "title": "Kinh tế",
+      "images": "https://cdn0.fahasa.com/media/wysiwyg/Thang-06-2024/cate_homepage_kinhte.jpg"
     },
     {
       "id": 3,
-      "title": "Văn học",
-      "images": "../assets/images/categories/cate_homepage_ngoaingu_1.webp"
+      "title": "Tâm lý",
+      "images": "https://cdn0.fahasa.com/media/wysiwyg/Thang-06-2024/cate_homepage_tamly.jpg"
+    },
+    {
+      "id": 4,
+      "title": "Ngoại ngữ",
+      "images": "https://cdn0.fahasa.com/media/wysiwyg/Thang-07-2024/cate_homepage_ngoaingu_1.jpg"
+    }
+  ],
+  "categoryProduct": [
+    {
+      "id": "Văn học",
+      "products": [
+        {
+          "id": "1",
+          "title": "Cây Cam Ngọt Của Tôi",
+          "description": "Vị chua chát của cái nghèo hòa trộn với vị ngọt ngào khi khám phá ra những điều khiến cuộc đời này đáng sống... một tác phẩm kinh điển của Brazil.",
+          "category": "Văn học",
+          "author": "José Mauro de Vasconcelos",
+          "publisher": "NXB Trẻ",
+          "price": 86400,
+          "rating": 4.2,
+          "stock": 50,
+          "tags": [
+            "caycamngotcuatoi",
+            "sachvanhoc"
+          ],
+          "images": [
+            "https://cdn0.fahasa.com/media/flashmagazine/images/page_images/cay_cam_ngot_cua_toi/2020_12_17_16_50_30_1-390x510.jpg?_gl=1*3vj9u8*_gcl_aw*R0NMLjE3MjQ5NDM1MDQuQ2p3S0NBand1TUMyQmhBN0Vpd0FtSktSckd0Z0l0WWZDSXgzODA3WGVXRUdqWW1zUldMREx1NU1HeTFBaGdtTTVMRHdXQUprTkphYkV4b0N0RFlRQXZEX0J3RQ..*_gcl_au*MjA1NTY2NjY3NC4xNzIzNTU5MjQw*_ga*Mzc2MDI5MTEuMTcyMzU1OTI0MA..*_ga_460L9JMC2G*MTcyNDk0MzQ5Mi43LjEuMTcyNDk0MzUyMy4yOS4wLjc5MzA3NzQ1OA.."
+          ]
+        },
+        {
+          "id": "2",
+          "title": "Nhà Giả Kim",
+          "description": "Nhà Giả Kim là một trong những tác phẩm nổi tiếng nhất của nhà văn Paulo Coelho. Đây là một cuốn sách mang đến cho người đọc những bài học quý giá về cuộc sống, về sự lựa chọn và về ước mơ.",
+          "category": "Văn học",
+          "author": "Paulo Coelho",
+          "publisher": "NXB Trẻ",
+          "price": 63200,
+          "rating": 4.5,
+          "stock": 50,
+          "tags": [
+            "nhagiakim",
+            "sachvanhoc"
+          ],
+          "images": [
+            "https://cdn0.fahasa.com/media/flashmagazine/images/page_images/nha_gia_kim_tai_ban_2020/2024_03_20_18_29_19_1-390x510.jpg?_gl=1*1efcawf*_gcl_aw*R0NMLjE3MjQ5NDM5NTMuQ2p3S0NBand1TUMyQmhBN0Vpd0FtSktSckd0Z0l0WWZDSXgzODA3WGVXRUdqWW1zUldMREx1NU1HeTFBaGdtTTVMRHdXQUprTkphYkV4b0N0RFlRQXZEX0J3RQ..*_gcl_au*MjA1NTY2NjY3NC4xNzIzNTU5MjQw*_ga*Mzc2MDI5MTEuMTcyMzU1OTI0MA..*_ga_460L9JMC2G*MTcyNDk0MzQ5Mi43LjEuMTcyNDk0Mzk1Ni41Ni4wLjc5MzA3NzQ1OA.."
+          ]
+        },
+        {
+          "id": "3",
+          "title": "Thương",
+          "description": "Thương là một tác phẩm văn học đương đại của nhà văn Nguyễn Ngọc Tư. Đây là một cuốn sách đầy cảm xúc, đầy tình cảm, đầy ý nghĩa về tình yêu, về cuộc sống.",
+          "category": "Văn học",
+          "author": "Nguyễn Ngọc Tư",
+          "publisher": "NXB Trẻ",
+          "price": 48750,
+          "rating": 4.7,
+          "stock": 50,
+          "tags": [
+            "thuong",
+            "sachvanhoc"
+          ],
+          "images": [
+            "https://cdn0.fahasa.com/media/catalog/product/b/i/bia1_thuong.jpg?_gl=1*5t842v*_gcl_aw*R0NMLjE3MjQ5NDQwOTEuQ2p3S0NBand1TUMyQmhBN0Vpd0FtSktSckd0Z0l0WWZDSXgzODA3WGVXRUdqWW1zUldMREx1NU1HeTFBaGdtTTVMRHdXQUprTkphYkV4b0N0RFlRQXZEX0J3RQ..*_gcl_au*MjA1NTY2NjY3NC4xNzIzNTU5MjQw*_ga*Mzc2MDI5MTEuMTcyMzU1OTI0MA..*_ga_460L9JMC2G*MTcyNDk0MzQ5Mi43LjEuMTcyNDk0NDEwMS40OS4wLjc5MzA3NzQ1OA.."
+          ]
+        },
+        {
+          "id": "4",
+          "title": "Tết Ở Làng Địa Ngục",
+          "description": "Năm đó, tại một ngôi làng xa xôi trên một ngọn núi hoang vu, người ta đón Tết trong sự kinh hãi tột độ, hoài nghi đau đáu và giận dữ khôn cùng trước sự ập tới của những bi kich tàn khốc.",
+          "category": "Văn học",
+          "author": "Thảo Trang",
+          "publisher": "NXB Trẻ",
+          "price": 121680,
+          "rating": 4.7,
+          "stock": 50,
+          "tags": [
+            "tetolangdiangu",
+            "sachvanhoc"
+          ],
+          "images": "https://cdn0.fahasa.com/media/catalog/product/8/9/8935212358279.jpg"
+        }
+      ]
+    },
+    {
+      "id": "Kinh tế",
+      "products": [
+        {
+          "id": "5",
+          "title": "MBA Bằng Hình - The Usual MBA",
+          "description": "MBA Bằng Hình - The Usual MBA là cuốn sách giúp bạn hiểu rõ hơn về MBA thông qua hình ảnh, thông qua những câu chuyện hài hước, thông qua những bài học thực tế.",
+          "category": "Kinh tế",
+          "author": "Jason Barron , MBA",
+          "publisher": "NXB Trẻ",
+          "price": 151000,
+          "rating": 4.8,
+          "stock": 50,
+          "tags": [
+            "mbabanghinh",
+            "sachkinhdoanh"
+          ],
+          "images": "https://cdn0.fahasa.com/media/flashmagazine/images/page_images/mba_bang_hinh___the_usual_mba/2023_09_29_16_35_31_1-390x510.jpg?_gl=1*1evu8vg*_gcl_aw*R0NMLjE3MjQ5NDUwNDAuQ2p3S0NBand1TUMyQmhBN0Vpd0FtSktSckd0Z0l0WWZDSXgzODA3WGVXRUdqWW1zUldMREx1NU1HeTFBaGdtTTVMRHdXQUprTkphYkV4b0N0RFlRQXZEX0J3RQ..*_gcl_au*MjA1NTY2NjY3NC4xNzIzNTU5MjQw*_ga*Mzc2MDI5MTEuMTcyMzU1OTI0MA..*_ga_460L9JMC2G*MTcyNDk0MzQ5Mi43LjEuMTcyNDk0NTA0MS41OS4wLjc5MzA3NzQ1OA.."
+        },
+        {
+          "id": "6",
+          "title": "Nghĩ Giàu & Làm Giàu",
+          "description": "Nghĩ Giàu & Làm Giàu là cuốn sách giúp bạn hiểu rõ hơn về cách nghĩ của những người giàu có, cách họ làm giàu và cách bạn có thể làm giàu theo cách của riêng mình.",
+          "category": "Kinh tế",
+          "author": "Napoleon Hill",
+          "publisher": "NXB Trẻ",
+          "price": 77000,
+          "rating": 4.6,
+          "stock": 50,
+          "tags": [
+            "nghiaulamgiau",
+            "sachkinhdoanh"
+          ],
+          "images": "https://cdn0.fahasa.com/media/catalog/product/n/g/nghigiaulamgiau_110k-01_bia_1.jpg?_gl=1*q7c3uk*_gcl_aw*R0NMLjE3MjQ5NDUxNDkuQ2p3S0NBand1TUMyQmhBN0Vpd0FtSktSckd0Z0l0WWZDSXgzODA3WGVXRUdqWW1zUldMREx1NU1HeTFBaGdtTTVMRHdXQUprTkphYkV4b0N0RFlRQXZEX0J3RQ..*_gcl_au*MjA1NTY2NjY3NC4xNzIzNTU5MjQw*_ga*Mzc2MDI5MTEuMTcyMzU1OTI0MA..*_ga_460L9JMC2G*MTcyNDk0MzQ5Mi43LjEuMTcyNDk0NTE1Mi41Ni4wLjc5MzA3NzQ1OA.."
+        },
+        {
+          "id": "7",
+          "title": "Kế Toán Vỉa Hè",
+          "description": "Kế Toán Vỉa Hè là cuốn sách giúp bạn hiểu rõ hơn về kế toán thông qua những câu chuyện hài hước, thông qua những bài học thực tế.",
+          "category": "Kinh tế",
+          "author": "Darrell Mullis",
+          "publisher": "NXB Trẻ",
+          "price": 169000,
+          "rating": 4.8,
+          "stock": 50,
+          "tags": [
+            "ketoanviahe",
+            "sachkinhdoanh"
+          ],
+          "images": "https://cdn0.fahasa.com/media/catalog/product/9/7/9786047787616_1.jpg"
+        },
+        {
+          "id": "8",
+          "title": "Chiến Tranh Tiền Tệ - Phần 1",
+          "description": "Một khi đọc “Chiến tranh tiền tệ - Ai thật sự là người giàu nhất thế giới” bạn sẽ phải giật mình nhận ra một điều kinh khủng rằng, đằng sau những tờ giấy bạc chúng ta chi tiêu hàng ngày là cả một thế lực ngầm đáng sợ - một thế lực bí ẩn với quyền lực siêu nhiên có thể điều khiển cả thế giới rộng lớn này.",
+          "category": "Kinh tế",
+          "author": "James Rickards",
+          "publisher": "NXB Trẻ",
+          "price": 118800,
+          "rating": 4.8,
+          "stock": 50,
+          "tags": [
+            "chientranhtientephannhat",
+            "sachkinhdoanh"
+          ],
+          "images": "https://cdn0.fahasa.com/media/catalog/product/b/i/bia-truoc-chien-tranh-tien-te-phan-1-1.jpg"
+        }
+      ]
+    },
+    {
+      "id": "Tâm lý",
+      "products": [
+        {
+          "id": "9",
+          "title": "Thay Đổi Cuộc Sống Với Nhân Số Học",
+          "description": "Thay Đổi Cuộc Sống Với Nhân Số Học là cuốn sách giúp bạn hiểu rõ hơn về nhân số học, cách áp dụng nhân số học vào cuộc sống của mình.",
+          "category": "Tâm lý",
+          "author": "Lê Đỗ Quỳnh Hương",
+          "publisher": "NXB Trẻ",
+          "price": 173600,
+          "rating": 4.9,
+          "stock": 50,
+          "tags": [
+            "thaydoicuocsongvoinhansohoc",
+            "sachtamly"
+          ],
+          "images": "https://cdn0.fahasa.com/media/catalog/product/t/d/tdcsvnsh.png?_gl=1*1rlmxbr*_gcl_aw*R0NMLjE3MjQ5NDU0MDUuQ2p3S0NBand1TUMyQmhBN0Vpd0FtSktSckd0Z0l0WWZDSXgzODA3WGVXRUdqWW1zUldMREx1NU1HeTFBaGdtTTVMRHdXQUprTkphYkV4b0N0RFlRQXZEX0J3RQ..*_gcl_au*MjA1NTY2NjY3NC4xNzIzNTU5MjQw*_ga*Mzc2MDI5MTEuMTcyMzU1OTI0MA..*_ga_460L9JMC2G*MTcyNDk0MzQ5Mi43LjEuMTcyNDk0NTQyNi44LjAuNzkzMDc3NDU4"
+        },
+        {
+          "id": "10",
+          "title": "Hiểu Về Trái Tim (Tái Bản 2023)",
+          "description": "“Hiểu về trái tim” là một cuốn sách đặc biệt được viết bởi thiền sư Minh Niệm. Với phong thái và lối hành văn gần gũi với những sinh hoạt của người Việt, thầy Minh Niệm đã thật sự thổi hồn Việt vào cuốn sách nhỏ này.",
+          "category": "Tâm lý",
+          "author": "Minh Niệm",
+          "publisher": "NXB Trẻ",
+          "price": 126400,
+          "rating": 4.8,
+          "stock": 50,
+          "tags": [
+            "hieuvetraitim",
+            "sachtamly"
+          ],
+          "images": "https://cdn0.fahasa.com/media/flashmagazine/images/page_images/hieu_ve_trai_tim_tai_ban_2023/2023_02_21_08_51_07_1-390x510.jpg?_gl=1*1blh95q*_gcl_aw*R0NMLjE3MjQ5NDU1MzAuQ2p3S0NBand1TUMyQmhBN0Vpd0FtSktSckd0Z0l0WWZDSXgzODA3WGVXRUdqWW1zUldMREx1NU1HeTFBaGdtTTVMRHdXQUprTkphYkV4b0N0RFlRQXZEX0J3RQ..*_gcl_au*MjA1NTY2NjY3NC4xNzIzNTU5MjQw*_ga*Mzc2MDI5MTEuMTcyMzU1OTI0MA..*_ga_460L9JMC2G*MTcyNDk0MzQ5Mi43LjEuMTcyNDk0NTUzNC41Ni4wLjc5MzA3NzQ1OA.."
+        },
+        {
+          "id": "11",
+          "title": "Lý Thuyết Trò Chơi",
+          "description": "Đời người giống như trò chơi, mỗi bước đều phải cân nhắc xem đi như thế nào, đi về đâu, phải kết hợp nhiều yếu tố lại chúng ta mới có thể đưa ra được lựa chọn. ",
+          "category": "Tâm lý",
+          "author": "Trần Phách Hàm",
+          "publisher": "NXB Trẻ",
+          "price": 134200,
+          "rating": 4.9,
+          "stock": 50,
+          "tags": [
+            "lythuyettrochoi",
+            "sachtamly"
+          ],
+          "images": "https://cdn0.fahasa.com/media/catalog/product/8/9/8936066697088.jpg"
+        },
+        {
+          "id": "12",
+          "title": "48 Nguyên Tắc Chủ Chốt Của Quyền Lực",
+          "description": "Quyền lực có sức hấp dẫn vô cùng mạnh mẽ đối với con người trong mọi thời, ở mọi nơi, với mọi giai tầng. Lịch sử xét cho cùng là cuộc đấu tranh triền miên để giành cho bằng được quyền lực cai trị của các tập đoàn thống trị, từ cổ chí kim, từ đông sang tây.",
+          "category": "Tâm lý",
+          "author": "Robert Greene",
+          "publisher": "NXB Trẻ",
+          "price": 134200,
+          "rating": 4.9,
+          "stock": 50,
+          "tags": [
+            "48nguyentacchuchotcuaquyenluc",
+            "sachtamly"
+          ],
+          "images": "https://cdn0.fahasa.com/media/flashmagazine/images/page_images/48_nguyen_tac_chu_chot_cua_quyen_luc_tai_ban_2020/2020_06_11_15_11_55_1-390x510.JPG?_gl=1*jqf605*_gcl_aw*R0NMLjE3MjQ5NDU2OTcuQ2p3S0NBand1TUMyQmhBN0Vpd0FtSktSckd0Z0l0WWZDSXgzODA3WGVXRUdqWW1zUldMREx1NU1HeTFBaGdtTTVMRHdXQUprTkphYkV4b0N0RFlRQXZEX0J3RQ..*_gcl_au*MjA1NTY2NjY3NC4xNzIzNTU5MjQw*_ga*Mzc2MDI5MTEuMTcyMzU1OTI0MA..*_ga_460L9JMC2G*MTcyNDk0MzQ5Mi43LjEuMTcyNDk0NTcwMS41NS4wLjc5MzA3NzQ1OA.."
+        }
+      ]
+    },
+    {
+      "id": "Ngoại ngữ",
+      "products": [
+        {
+          "id": "13",
+          "title": "Destination B1 - Grammar And Vocabulary with Answer Key",
+          "description": "Destination B1 - Grammar And Vocabulary with Answer Key là cuốn sách giúp bạn hiểu rõ hơn về ngữ pháp và từ vựng tiếng Anh thông qua những bài học thực tế.",
+          "category": "Ngoại ngữ",
+          "author": "Malcolm Mann, Steve Taylore-Knowles",
+          "publisher": "NXB Trẻ",
+          "price": 118000,
+          "rating": 4.8,
+          "stock": 50,
+          "tags": [
+            "destinationb1grammarandvocabularywithanswerkey",
+            "sachngoaingu"
+          ],
+          "images": "https://cdn0.fahasa.com/media/catalog/product/b/1/b1_4_4.jpg"
+        },
+        {
+          "id": "14",
+          "title": "Giải Thích Ngữ Pháp Tiếng Anh (Tái Bản 2024)",
+          "description": "Giải Thích Ngữ Pháp Tiếng Anh (Tái Bản 2024) là cuốn sách giúp bạn hiểu rõ hơn về ngữ pháp tiếng Anh thông qua những bài học thực tế.",
+          "category": "Ngoại ngữ",
+          "author": "Nguyễn Thị Thanh Bình",
+          "publisher": "NXB Trẻ",
+          "price": 154000,
+          "rating": 4.9,
+          "stock": 50,
+          "tags": [
+            "giaithichnguphaptienganh",
+            "sachngoaingu"
+          ],
+          "images": "https://cdn0.fahasa.com/media/catalog/product/g/i/giaithichnguphapta-tb2024_bia1_1.jpg?_gl=1*cmz0sb*_gcl_aw*R0NMLjE3MjQ5NDU4NjguQ2p3S0NBand1TUMyQmhBN0Vpd0FtSktSckd0Z0l0WWZDSXgzODA3WGVXRUdqWW1zUldMREx1NU1HeTFBaGdtTTVMRHdXQUprTkphYkV4b0N0RFlRQXZEX0J3RQ..*_gcl_au*MjA1NTY2NjY3NC4xNzIzNTU5MjQw*_ga*Mzc2MDI5MTEuMTcyMzU1OTI0MA..*_ga_460L9JMC2G*MTcyNDk0MzQ5Mi43LjEuMTcyNDk0NTg3MS41Ni4wLjc5MzA3NzQ1OA.."
+        },
+        {
+          "id": "15",
+          "title": "Giáo Trình Chuẩn HSK 1 (Tái Bản 2023)",
+          "description": "Giáo Trình Chuẩn HSK 1 (Tái Bản 2023) là cuốn sách giúp bạn hiểu rõ hơn về kỳ thi HSK 1 thông qua những bài học thực tế.",
+          "category": "Ngoại ngữ",
+          "author": "Khương Lệ Bình",
+          "publisher": "NXB Trẻ",
+          "price": 166000,
+          "rating": 4.8,
+          "stock": 50,
+          "tags": [
+            "giaotrinhchuanshk1",
+            "sachngoaingu"
+          ],
+          "images": "https://cdn0.fahasa.com/media/flashmagazine/images/page_images/giao_trinh_chuan_hsk_1_tai_ban_2023/2023_05_26_09_26_03_1-390x510.jpg?_gl=1*n3m65p*_gcl_aw*R0NMLjE3MjQ5NDU5NDQuQ2p3S0NBand1TUMyQmhBN0Vpd0FtSktSckd0Z0l0WWZDSXgzODA3WGVXRUdqWW1zUldMREx1NU1HeTFBaGdtTTVMRHdXQUprTkphYkV4b0N0RFlRQXZEX0J3RQ..*_gcl_au*MjA1NTY2NjY3NC4xNzIzNTU5MjQw*_ga*Mzc2MDI5MTEuMTcyMzU1OTI0MA..*_ga_460L9JMC2G*MTcyNDk0MzQ5Mi43LjEuMTcyNDk0NTk0Ni40My4wLjc5MzA3NzQ1OA.."
+        },
+        {
+          "id": "16",
+          "title": "Giáo Trình Chuẩn YCT 1 (CD)",
+          "description": "Giáo Trình Chuẩn YCT 1 (CD) là cuốn sách giúp bạn hiểu rõ hơn về kỳ thi YCT 1 thông qua những bài học thực tế.",
+          "category": "Ngoại ngữ",
+          "author": "Tô Anh Hà, Kim Phi Phi",
+          "publisher": "NXB Trẻ",
+          "price": 115000,
+          "rating": 4.8,
+          "stock": 50,
+          "tags": [
+            "giaotrinhchuanyct1cd",
+            "sachngoaingu"
+          ],
+          "images": "https://cdn0.fahasa.com/media/flashmagazine/images/page_images/giao_trinh_chuan_yct_1_cd/2021_08_10_10_17_17_1-390x510.jpg?_gl=1*8fkex4*_gcl_aw*R0NMLjE3MjQ5NDU5OTkuQ2p3S0NBand1TUMyQmhBN0Vpd0FtSktSckd0Z0l0WWZDSXgzODA3WGVXRUdqWW1zUldMREx1NU1HeTFBaGdtTTVMRHdXQUprTkphYkV4b0N0RFlRQXZEX0J3RQ..*_gcl_au*MjA1NTY2NjY3NC4xNzIzNTU5MjQw*_ga*Mzc2MDI5MTEuMTcyMzU1OTI0MA..*_ga_460L9JMC2G*MTcyNDk0MzQ5Mi43LjEuMTcyNDk0NjAxOC40MC4wLjc5MzA3NzQ1OA.."
+        }
+      ]
     }
   ]
 }
