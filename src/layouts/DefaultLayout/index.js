@@ -6,7 +6,7 @@ function DefaultLayout({ children, ...props }) {
     return (
         <div {...props}>
             <Header />
-            <div className="container" style={{ marginBottom: 30 }}>
+            <div className="container" style={{}}>
                 <div>
                     <Category />
                     {children}

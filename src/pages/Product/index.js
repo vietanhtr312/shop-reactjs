@@ -4,8 +4,10 @@ import styles from './Product.module.scss';
 import classNames from 'classnames/bind';
 import { categories } from "../../layouts/DefaultLayout/Category";
 import { ROUTERS } from "../../utils/router";
-import prodImg from "../../assets/images/product";
 import ProductCard from "../../components/ProductCard";
+import { useDispatch, useSelector } from "react-redux";
+import { fetchAsyncProducts, getAllProducts, getAllProductsStatus } from "../../store/productSlice";
+import { useEffect } from "react";
 
 const cx = classNames.bind(styles);
 
@@ -18,49 +20,14 @@ const Product = () => {
         "Giá: Cao đến thấp"
     ]
 
-    const products = [
-        {
-            img: prodImg.prod1,
-            name: 'Hai Vạn Dặm Dưới Biển',
-            price: 74.250,
-        },
-        {
-            img: prodImg.prod2,
-            name: 'Đám Trẻ Ở Đại Dương Đen',
-            price: 61.380,
-        },
-        {
-            img: prodImg.prod3,
-            name: 'MBA Bằng Hình',
-            price: 151.200,
-        },
-        {
-            img: prodImg.prod4,
-            name: 'Chiến Tranh Tiền Tệ',
-            price: 169.000,
-        },
-        {
-            img: prodImg.prod5,
-            name: 'Sếp Ơi! Tại Sao Không Thăng Chức Cho Tôi?',
-            price: 34.300,
-        },
-        {
-            img: prodImg.prod6,
-            name: 'Văn Hóa E-Mail: Xây Dựng Hình Ảnh Cá Nhân Qua E-Mail',
-            price: 37.800,
-        },
-        {
-            img: prodImg.prod7,
-            name: 'Giải Thích Ngữ Pháp Tiếng Anh (Tái Bản 2024)',
-            price: 143.000,
-        },
-        {
-            img: prodImg.prod8,
-            name: 'Destination B2 - Grammar And Vocabulary with Answer Key',
-            price: 118.300,
-        },
-    ];
+    const dispatch = useDispatch();
+    
+    useEffect(() => {
+        dispatch(fetchAsyncProducts());
+    }, []);
 
+    const products = useSelector(getAllProducts);
+    const productStatus = useSelector(getAllProductsStatus);
 
 
     return (
@@ -113,7 +80,7 @@ const Product = () => {
                             <div className="row">
                                 {products.map((product, index) => (
                                     <div className="col l-4 m-4 c-12">
-                                        <ProductCard key={index} img={product.img} name={product.name} price={product.price} />
+                                        <ProductCard product={product}/>
                                     </div>
                                 ))}
                             </div>

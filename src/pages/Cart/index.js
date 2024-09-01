@@ -2,7 +2,7 @@ import style from './Cart.module.scss';
 import classNames from 'classnames/bind';
 import { useSelector, useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { getAllCart, removeFromCart, toggleCartQty } from '../../store/cartSlice';
+import { getAllCart, removeFromCart, toggleCartQty, clearCart } from '../../store/cartSlice';
 import { ROUTERS } from '../../utils/router';
 import imgs from '../../assets/images/hero';
 import { formatPrice } from '../../utils/formarter';
@@ -17,9 +17,9 @@ function Cart() {
     const { itemsCount, totalAmount } = useSelector(state => state.cart);
 
     if (carts.length === 0) {
-        return (<div className={style.emptyCart}>
+        return (<div className={cx('cartpage--empty')}>
             <img src={imgs.emptyCart} alt='empty cart' />
-            <h2>Your cart is empty</h2>
+            <h4>Your cart is empty</h4>
             <Link to={ROUTERS.USER.PRODUCTS} className={cx('btn', 'btn--primary')}>Go to Products</Link>
         </div>)
     }
@@ -41,15 +41,15 @@ function Cart() {
                             </tr>
                         </table>
                         <div className={cx('cartpage-body')}>
-                            {carts.map((cart, index) => {
-                                return (
-                                    <div className={cx('cartpage-table')} key={index}>
-                                        <table>
-                                            <tr>
+                            <div className={cx('cartpage-table')}>
+                                <table>
+                                    {carts.map((cart, index) => {
+                                        return (
+                                            <tr key={index}>
                                                 <td>{index + 1}</td>
                                                 <td><img src={cart?.images} alt="" /></td>
                                                 <td><p>{cart?.title}</p></td>
-                                                <td><p>{formatPrice(cart?.price)}</p></td>
+                                                <td className={cx('price')}><p>{formatPrice(cart?.price)}</p></td>
                                                 <td><span className={cx('qty-change')}>
                                                     <button onClick={() => dispatch(toggleCartQty({ id: cart?.id, type: "DEC" }))}>
                                                         <i className="fas fa-minus"></i>
@@ -59,19 +59,35 @@ function Cart() {
                                                         <i className="fas fa-plus"></i>
                                                     </button>
                                                 </span></td>
-                                                <td><p>{formatPrice(cart?.total)}</p></td>
-                                                <td><button onClick={() => dispatch(removeFromCart(cart?.id))}><i className="fas fa-trash-alt"></i></button></td>
+                                                <td className={cx('price')}><p>{formatPrice(cart?.total)}</p></td>
+                                                <td className={cx('action')}><button onClick={() => dispatch(removeFromCart(cart?.id))}><i className="fas fa-trash-alt"></i></button></td>
                                             </tr>
-                                        </table>
-                                    </div>
-                                )
-                            })}
+                                        )
+                                    })}
+                                </table>
+                            </div>
 
+                        </div>
+                        <div className={cx('cartpage-foot')}>
+                            <div className={cx('cartpage-clear')}>
+                                <button className='btn' onClick={() => dispatch(clearCart())}>
+                                    <i className="fas fa-trash-alt"></i>
+                                    <span>Xóa giỏ hàng</span>
+                                </button>
+
+                            </div>
+
+                            <div className={cx('cartpage-total')}>
+                                <p>Tổng cộng ({itemsCount}) sản phẩm: <span>{formatPrice(totalAmount)}</span></p>
+                                <button className={cx('cartpage-btn')}>
+                                    <Link to={ROUTERS.USER.CHECKOUT} className={cx('btn', 'btn--primary')}>Thanh toán</Link>
+                                </button>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
+        </div >
     )
 
 }

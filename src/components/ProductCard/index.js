@@ -7,7 +7,7 @@ const cx = classNames.bind(styles);
 
 const ProductCard = ({product}) => {
     return (
-        <Link to = {`product/${product?.id}`} key = {product?.id}>
+        <Link to = {`/products/product/${product?.id}`} key = {product?.id}>
             <div className={cx('featured-item')}>
                 <div className={cx('featured-item-pic')}
                     style={{ backgroundImage: `url(${product?.images})` }}>
