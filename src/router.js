@@ -7,6 +7,7 @@ import Products from './pages/Products';
 import ProductDetail from './pages/ProductDetail';
 import Cart from './pages/Cart';
 import CategoryProduct from './pages/CategoryProduct';
+import Search from './pages/Search';
 
 
 const renderUserRouter = () => {
@@ -34,6 +35,10 @@ const renderUserRouter = () => {
         {
             path: ROUTERS.USER.CATEGORYPRODUCT,
             component: <CategoryProduct />,
+        },
+        {
+            path: ROUTERS.USER.SEARCH,
+            component: <Search />,
         }
     ];
 

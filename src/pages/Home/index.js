@@ -3,8 +3,8 @@ import "react-multi-carousel/lib/styles.css";
 import classNames from 'classnames/bind';
 import styles from './Home.module.scss';
 import bannerImg from "../../assets/images/banner";
-import { Link } from "react-router-dom";
 
+import { Link } from "react-router-dom";
 import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import ProductList from "../../components/ProductList";

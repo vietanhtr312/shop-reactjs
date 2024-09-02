@@ -5,8 +5,8 @@ import { useEffect, useState } from 'react';
 import styles from './Header.module.scss';
 import classNames from 'classnames/bind';
 import images from '../../../assets/images/hero';
-import { getAllCart, getCartItemsCount, getCartTotal } from '../../../store/cartSlice';
-import { getAllCategories, fetchAsyncCategories } from '../../../store/categorySlice';
+import { getAllCart, getCartTotal } from '../../../store/cartSlice';
+import { getAllCategories } from '../../../store/categorySlice';
 import CartModal from '../../../components/CartModal';
 import { formatPrice } from '../../../utils/formarter';
 
@@ -16,8 +16,13 @@ function Header(...props) {
     const dispatch = useDispatch();
     const carts = useSelector(getAllCart);
     const { itemsCount, totalAmount } = useSelector(state => state.cart);
-
     const categories = useSelector(getAllCategories);
+    const [searchTerm, setSearchTerm] = useState('');
+
+    const handleSearchTerm = (e) => {
+        e.preventDefault();
+        setSearchTerm(e.target.value);
+    }
 
     useEffect(() => {
         dispatch(getCartTotal());
@@ -54,7 +59,7 @@ function Header(...props) {
                     <ul>
                         {categories && categories?.map((category, index) => (
                             <li key={index}>
-                                <Link to={ROUTERS.USER.PRODUCTS}>Sách {category?.title}</Link>
+                                <Link to={`/products/category/${category?.title}`}>Sách {category?.title}</Link>
                             </li>
                         ))}
                     </ul>
@@ -151,10 +156,10 @@ function Header(...props) {
                         <div className='col l-8 m-6 c-0'>
                             <div className={cx("search")}>
                                 <div className={cx("search-input-wrap")}>
-                                    <input type="search" placeholder="Tìm kiếm sản phẩm" spellCheck={false} />
+                                    <input type="search" placeholder="Tìm kiếm sản phẩm" spellCheck={false} onChange={(e) => handleSearchTerm(e)}/>
                                 </div>
-                                <button><i className={cx("fa-solid fa-magnifying-glass")}></i></button>
-                            </div>
+                                <Link to= {`search/${searchTerm}`}><button><i className={cx("fa-solid fa-magnifying-glass")}></i></button></Link>
+                            </div>  
                         </div>
 
                         <div className={cx("cart", "col l-2 m-0 c-0")}>
@@ -185,9 +190,9 @@ function Header(...props) {
 
                         <div style={{ marginTop: 10 }} className={cx("search", "col l-0 m-0 c-12")}>
                             <div className={cx("search-input-wrap")}>
-                                <input type="search" placeholder="Tìm kiếm sản phẩm" spellCheck={false} />
+                                <input type="search" placeholder="Tìm kiếm sản phẩm" spellCheck={false} onChange={(e) => handleSearchTerm(e)}/>
                             </div>
-                            <button><i className={cx("fa-solid fa-magnifying-glass")}></i></button>
+                            <Link to={`search/${searchTerm}`}><button><i className={cx("fa-solid fa-magnifying-glass")}></i></button></Link>
                         </div>
                     </div>
                 </div>

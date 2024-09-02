@@ -42,7 +42,7 @@ function Category() {
         
                                     <ul className={isShowCategory ? cx('') : cx('hidden')}>
                                         <li className={cx('main')}>
-                                            <Link href="">Nhà Sách Online</Link>
+                                            <Link to={ROUTERS.USER.PRODUCTS}>Nhà Sách Online</Link>
                                         </li>
                                         {categories && categories?.map((category, index) => (
                                             <li key={index}>

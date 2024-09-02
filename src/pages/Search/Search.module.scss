@@ -1,0 +1,47 @@
+.search-noresult {
+    min-height: 50vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-transform: uppercase;
+    color: var(--primary-color);
+}
+
+
+.search-products {
+    margin-top: 20px;
+
+    .search-products-content {
+        padding: 1.2rem 4px 1.2rem 30px;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+        background-color: var(--white-color);
+        position: relative;
+        box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+        height: 50px;
+        margin-bottom: 30px;
+
+        h3 {
+            color: rgba(0, 0, 0, 0.4);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            font-size: 18px;
+            float: left;
+        }
+
+        &::before{
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 6px;
+            height: 100%;
+            background-color: var(--primary-color);
+        }
+    }
+
+    .search-products-list {
+        background-color: white;
+    }
+}
+

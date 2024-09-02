@@ -74,7 +74,7 @@ const Products = () => {
                                     <ul>
                                         {categories.map((category, index) => (
                                             <li key={index}>
-                                                <Link to={ROUTERS.USER.PRODUCTS}>{category}</Link>
+                                                <Link to={`/products/category/${category?.title}`}>{category?.title}</Link>
                                             </li>
                                         ))}
                                     </ul>

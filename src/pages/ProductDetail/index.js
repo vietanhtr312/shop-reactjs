@@ -3,6 +3,8 @@ import { useParams } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { fetchAsyncProductSingle, getProductSingle, getSingleProductStatus } from "../../store/productSlice";
 import { STATUS } from "../../utils/status";
+import StarRatings from 'react-star-ratings';
+
 
 import styles from './ProductDetail.module.scss';
 import classNames from 'classnames/bind';
@@ -56,7 +58,7 @@ const ProductDetail = () => {
     const addToCartHandler = (product) => {
         let total = product.price * quantity;
 
-        dispatch(addToCart({...product, quantity: quantity, total: total}));
+        dispatch(addToCart({ ...product, quantity: quantity, total: total }));
         dispatch(setCartMessageOn(true));
     }
 
@@ -81,10 +83,12 @@ const ProductDetail = () => {
                         <div className={cx('col l-6', 'product-detail-text')}>
                             <div className={cx('title')}>{product?.title}</div>
                             <div className={cx('info', 'row')}>
-                                <div className="col l-6">Danh mục: <span>{product?.category}</span></div>
-                                <div className="col l-6">Tác giả: <span>{product?.author}</span></div>
-                                <div className="col l-6">NXB: <span>{product?.publisher}</span></div>
-                                <div className="col l-6">Rating: <span>{product?.rating}</span></div>
+                                <div className="col l-6 c-12">Danh mục: <span>{product?.category}</span></div>
+                                <div className="col l-6 c-12">Tác giả: <span>{product?.author}</span></div>
+                                <div className="col l-6 c-12">NXB: <span>{product?.publisher}</span></div>
+                                <div className="col l-6 c-12">Rating: <span>
+                                    <StarRatings starDimension="16" starSpacing="2" starRatedColor='yellow' rating={product?.rating} />
+                                </span></div>
                             </div>
                             <p className={cx('desc')}>{product?.description}</p>
                             <div className={cx('price')}>Giá: <span>{formatPrice(product?.price)}</span></div>

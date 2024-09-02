@@ -14,7 +14,7 @@ const saveToLocalStorage = (carts) => {
 }
 
 const initialState = {
-    carts: [],
+    carts: fetchFromLocalStorage(),
     itemsCount: 0,
     totalAmount: 0,
     isCartMessageOn: false,
