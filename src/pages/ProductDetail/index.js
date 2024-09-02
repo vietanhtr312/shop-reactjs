@@ -74,9 +74,9 @@ const ProductDetail = () => {
                                     <img src={product ? (product.images ? product.images : "") : ""} alt="product" />
                                 </div>
                                 <div className={cx('main')}>
-                                    {/* {imgs.length() > 1 ? imgs.map((img, index) => (
+                                    {imgs && imgs.slice(1,4).map((img, index) => (
                                         <img key={index} src={img} alt="product-pic" />
-                                    )) : ""} */}
+                                    ))}
                                 </div>
                             </div>
                         </div>

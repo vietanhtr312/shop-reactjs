@@ -39,6 +39,32 @@ const productSlice = createSlice({
             .addCase(fetchAsyncProductSingle.rejected, (state) => {
                 state.productSingleStatus = STATUS.FAILED;
             })
+
+            .addCase(fetchAsyncSortProducts.pending, (state) => {
+                state.productsStatus = STATUS.LOADING;
+            })
+
+            .addCase(fetchAsyncSortProducts.fulfilled, (state, { payload }) => {
+                state.products = payload;
+                state.productsStatus = STATUS.SUCCESS;
+            })
+
+            .addCase(fetchAsyncSortProducts.rejected, (state) => {
+                state.productsStatus = STATUS.FAILED;
+            })
+
+            .addCase(fetchAsyncFilterProducts.pending, (state) => {
+                state.productsStatus = STATUS.LOADING;
+            })
+
+            .addCase(fetchAsyncFilterProducts.fulfilled, (state, { payload }) => {
+                state.products = payload;
+                state.productsStatus = STATUS.SUCCESS;
+            })
+
+            .addCase(fetchAsyncFilterProducts.rejected, (state) => {
+                state.productsStatus = STATUS.FAILED;
+            })
     }
 });
 
@@ -53,6 +79,20 @@ export const fetchAsyncProductSingle = createAsyncThunk('product-single/fetch', 
     const data = await response.json();
     return data;
 })
+
+export const fetchAsyncSortProducts = createAsyncThunk('products/sort', async (sort) => {
+    const response = await fetch(`${BASE_URL}products?_sort=${sort?.value}&_order=${sort?.option}`);
+    const data = await response.json();
+    return data;
+})
+
+export const fetchAsyncFilterProducts = createAsyncThunk('products/filter', async (price) => {
+    const response = await fetch(`${BASE_URL}products?price_gte=${price.lowerPrice || 0}&price_lte=${price.upperPrice || 100000000}`);
+    const data = await response.json();
+    return data;
+})
+
+
 
 export const getAllProducts = (state) => state.product.products;
 export const getAllProductsStatus = (state) => state.product.productsStatus;

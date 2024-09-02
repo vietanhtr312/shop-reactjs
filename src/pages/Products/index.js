@@ -1,27 +1,55 @@
 import { memo } from "react";
 import { Link } from "react-router-dom";
-import { ROUTERS } from "../../utils/router";
 import styles from './Products.module.scss';
 import classNames from 'classnames/bind';
 import ProductCard from "../../components/ProductCard";
 import { useDispatch, useSelector } from "react-redux";
-import { fetchAsyncProducts, getAllProducts, getAllProductsStatus } from "../../store/productSlice";
+import { fetchAsyncProducts, getAllProducts, fetchAsyncSortProducts, fetchAsyncFilterProducts } from "../../store/productSlice";
 import { fetchAsyncCategories, getAllCategories } from "../../store/categorySlice";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
+import { formatPrice } from "../../utils/formarter";
 
 const cx = classNames.bind(styles);
 
 const Products = () => {
+    const [lowerPrice, setLowerPrice] = useState('');
+    const [upperPrice, setUpperPrice] = useState('');
+
     const sorts = [
-        "Mới nhất",
-        "Bán chạy",
-        "Giảm giá nhiều nhất",
-        "Giá: Thấp đến cao",
-        "Giá: Cao đến thấp"
+        {
+            name: "Mới nhất",
+            value: "createdAt",
+            option: "desc"
+        },
+        {
+            name: "Bán chạy",
+            value: "sold",
+            option: "desc"
+        },
+        {
+            name: "Giảm giá nhiều nhất",
+            value: "discount"
+        },
+        {
+            name: "Giá: Thấp đến cao",
+            value: "price",
+            option: "asc"
+        },
+        {
+            name: "Giá: Cao đến thấp",
+            value: "price",
+            option: "desc"
+        }
     ]
 
+    const [sortProduct, setSortProduct] = useState("Mới nhất");
+    const handleSortProduct = (sort) => {
+        setSortProduct(sort.name);
+        dispatch(fetchAsyncSortProducts(sort));
+    }
+
     const dispatch = useDispatch();
-    
+
     useEffect(() => {
         dispatch(fetchAsyncProducts());
     }, []);
@@ -43,28 +71,36 @@ const Products = () => {
                         <div className={cx('col', 'l-3', 'm-12', 'c-12')}>
                             <div className={cx('sidebar')}>
                                 <div className={cx('sidebar-item')}>
-                                    <h2>Tìm kiếm</h2>
-                                    <input type="text" placeholder="Tìm kiếm" />
+                                    <h2 className={cx("title")}>Lọc sản phẩm</h2>
                                 </div>
                                 <div className={cx('sidebar-item')}>
                                     <h2>Mức giá</h2>
                                     <div className={cx('price')}>
                                         <div>
                                             <p>Từ: </p>
-                                            <input type='number' min={0} />
+                                            <input placeholder="₫" type='number' min={0} value={lowerPrice} onChange={(e) => setLowerPrice(e.target.value)} />
                                         </div>
                                         <div>
                                             <p>Đến: </p>
-                                            <input type='number' min={0} />
+                                            <input placeholder="₫" type='number' min={0} value={upperPrice} onChange={(e) => setUpperPrice(e.target.value)} />
                                         </div>
+                                        <button className="btn btn--primary" onClick={() => {
+                                            const price = {
+                                                lowerPrice: lowerPrice,
+                                                upperPrice: upperPrice
+                                            }
+                                            dispatch(fetchAsyncFilterProducts(price));
+                                            setLowerPrice('');
+                                            setUpperPrice('');
+                                        }}>Áp dụng</button>
                                     </div>
                                 </div>
                                 <div className={cx('sidebar-item')}>
                                     <h2>Sắp xếp</h2>
                                     <div className={cx('tags')}>
                                         {sorts.map((sort, index) => (
-                                            <div className={cx('tag', `${index === 0 ? "active" : ""}`)} key={index}>
-                                                {sort}
+                                            <div className={cx('tag', `${sort.name === sortProduct ? "active" : ""}`)} key={index} onClick={() => handleSortProduct(sort)}>
+                                                {sort.name}
                                             </div>
                                         ))}
                                     </div>
@@ -84,8 +120,8 @@ const Products = () => {
                         <div className={cx('col', 'l-9', 'm-12', 'c-12')}>
                             <div className="row">
                                 {products.map((product, index) => (
-                                    <div className="col l-4 m-4 c-12">
-                                        <ProductCard product={product}/>
+                                    <div className="col l-4 m-4 c-12" key={index}>
+                                        <ProductCard product={product} />
                                     </div>
                                 ))}
                             </div>

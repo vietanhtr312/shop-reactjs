@@ -10,12 +10,17 @@
       "price": 86400,
       "rating": 4.2,
       "stock": 50,
+      "sold": 12,
+      "createAt": "2024-05-23T08:56:21.618Z",
       "tags": [
         "caycamngotcuatoi",
         "sachvanhoc"
       ],
       "images": [
-        "https://cdn0.fahasa.com/media/flashmagazine/images/page_images/cay_cam_ngot_cua_toi/2020_12_17_16_50_30_1-390x510.jpg?_gl=1*3vj9u8*_gcl_aw*R0NMLjE3MjQ5NDM1MDQuQ2p3S0NBand1TUMyQmhBN0Vpd0FtSktSckd0Z0l0WWZDSXgzODA3WGVXRUdqWW1zUldMREx1NU1HeTFBaGdtTTVMRHdXQUprTkphYkV4b0N0RFlRQXZEX0J3RQ..*_gcl_au*MjA1NTY2NjY3NC4xNzIzNTU5MjQw*_ga*Mzc2MDI5MTEuMTcyMzU1OTI0MA..*_ga_460L9JMC2G*MTcyNDk0MzQ5Mi43LjEuMTcyNDk0MzUyMy4yOS4wLjc5MzA3NzQ1OA.."
+        "https://cdn0.fahasa.com/media/flashmagazine/images/page_images/cay_cam_ngot_cua_toi/2020_12_17_16_50_30_1-390x510.jpg?_gl=1*3vj9u8*_gcl_aw*R0NMLjE3MjQ5NDM1MDQuQ2p3S0NBand1TUMyQmhBN0Vpd0FtSktSckd0Z0l0WWZDSXgzODA3WGVXRUdqWW1zUldMREx1NU1HeTFBaGdtTTVMRHdXQUprTkphYkV4b0N0RFlRQXZEX0J3RQ..*_gcl_au*MjA1NTY2NjY3NC4xNzIzNTU5MjQw*_ga*Mzc2MDI5MTEuMTcyMzU1OTI0MA..*_ga_460L9JMC2G*MTcyNDk0MzQ5Mi43LjEuMTcyNDk0MzUyMy4yOS4wLjc5MzA3NzQ1OA..",
+        "https://cdn0.fahasa.com/media/flashmagazine/images/page_images/cay_cam_ngot_cua_toi/2020_12_17_16_50_30_2-390x510.jpg?_gl=1*1yrgqzd*_gcl_aw*R0NMLjE3MjQ5NDU5OTkuQ2p3S0NBand1TUMyQmhBN0Vpd0FtSktSckd0Z0l0WWZDSXgzODA3WGVXRUdqWW1zUldMREx1NU1HeTFBaGdtTTVMRHdXQUprTkphYkV4b0N0RFlRQXZEX0J3RQ..*_gcl_au*MjA1NTY2NjY3NC4xNzIzNTU5MjQw*_ga*Mzc2MDI5MTEuMTcyMzU1OTI0MA..*_ga_460L9JMC2G*MTcyNTI2OTM0NS4xMC4xLjE3MjUyNjk1MzkuNDQuMC41MDc2OTU2MDM.",
+        "https://cdn0.fahasa.com/media/flashmagazine/images/page_images/cay_cam_ngot_cua_toi/2020_12_17_16_50_30_3-390x510.jpg?_gl=1*1yrgqzd*_gcl_aw*R0NMLjE3MjQ5NDU5OTkuQ2p3S0NBand1TUMyQmhBN0Vpd0FtSktSckd0Z0l0WWZDSXgzODA3WGVXRUdqWW1zUldMREx1NU1HeTFBaGdtTTVMRHdXQUprTkphYkV4b0N0RFlRQXZEX0J3RQ..*_gcl_au*MjA1NTY2NjY3NC4xNzIzNTU5MjQw*_ga*Mzc2MDI5MTEuMTcyMzU1OTI0MA..*_ga_460L9JMC2G*MTcyNTI2OTM0NS4xMC4xLjE3MjUyNjk1MzkuNDQuMC41MDc2OTU2MDM.",
+        "https://cdn0.fahasa.com/media/flashmagazine/images/page_images/cay_cam_ngot_cua_toi/2020_12_17_16_50_30_4-390x510.jpg"
       ]
     },
     {
@@ -28,6 +33,8 @@
       "price": 63200,
       "rating": 4.5,
       "stock": 50,
+      "sold": 10,
+      "createAt": "2024-05-23T08:56:21.618Z",
       "tags": [
         "nhagiakim",
         "sachvanhoc"
@@ -46,6 +53,8 @@
       "price": 48750,
       "rating": 4.7,
       "stock": 50,
+      "sold": 8,
+      "createAt": "2024-05-23T08:56:21.618Z",
       "tags": [
         "thuong",
         "sachvanhoc"
@@ -64,11 +73,13 @@
       "price": 121680,
       "rating": 4.7,
       "stock": 50,
+      "sold": 6,
+      "createAt": "2024-05-23T08:56:21.618Z",
       "tags": [
         "tetolangdiangu",
         "sachvanhoc"
       ],
-      "images": "https://cdn0.fahasa.com/media/catalog/product/8/9/8935212358279.jpg"
+      "images": ["https://cdn0.fahasa.com/media/catalog/product/8/9/8935212358279.jpg"]
     },
     {
       "id": "5",
@@ -80,11 +91,13 @@
       "price": 151000,
       "rating": 4.8,
       "stock": 50,
+      "sold": 4,
+      "createAt": "2024-05-23T08:56:21.618Z",
       "tags": [
         "mbabanghinh",
         "sachkinhdoanh"
       ],
-      "images": "https://cdn0.fahasa.com/media/flashmagazine/images/page_images/mba_bang_hinh___the_usual_mba/2023_09_29_16_35_31_1-390x510.jpg?_gl=1*1evu8vg*_gcl_aw*R0NMLjE3MjQ5NDUwNDAuQ2p3S0NBand1TUMyQmhBN0Vpd0FtSktSckd0Z0l0WWZDSXgzODA3WGVXRUdqWW1zUldMREx1NU1HeTFBaGdtTTVMRHdXQUprTkphYkV4b0N0RFlRQXZEX0J3RQ..*_gcl_au*MjA1NTY2NjY3NC4xNzIzNTU5MjQw*_ga*Mzc2MDI5MTEuMTcyMzU1OTI0MA..*_ga_460L9JMC2G*MTcyNDk0MzQ5Mi43LjEuMTcyNDk0NTA0MS41OS4wLjc5MzA3NzQ1OA.."
+      "images": ["https://cdn0.fahasa.com/media/flashmagazine/images/page_images/mba_bang_hinh___the_usual_mba/2023_09_29_16_35_31_1-390x510.jpg?_gl=1*1evu8vg*_gcl_aw*R0NMLjE3MjQ5NDUwNDAuQ2p3S0NBand1TUMyQmhBN0Vpd0FtSktSckd0Z0l0WWZDSXgzODA3WGVXRUdqWW1zUldMREx1NU1HeTFBaGdtTTVMRHdXQUprTkphYkV4b0N0RFlRQXZEX0J3RQ..*_gcl_au*MjA1NTY2NjY3NC4xNzIzNTU5MjQw*_ga*Mzc2MDI5MTEuMTcyMzU1OTI0MA..*_ga_460L9JMC2G*MTcyNDk0MzQ5Mi43LjEuMTcyNDk0NTA0MS41OS4wLjc5MzA3NzQ1OA.."]
     },
     {
       "id": "6",
@@ -96,11 +109,13 @@
       "price": 77000,
       "rating": 4.6,
       "stock": 50,
+      "sold": 15,
+      "createAt": "2024-05-23T08:56:21.618Z",
       "tags": [
         "nghiaulamgiau",
         "sachkinhdoanh"
       ],
-      "images": "https://cdn0.fahasa.com/media/catalog/product/n/g/nghigiaulamgiau_110k-01_bia_1.jpg?_gl=1*q7c3uk*_gcl_aw*R0NMLjE3MjQ5NDUxNDkuQ2p3S0NBand1TUMyQmhBN0Vpd0FtSktSckd0Z0l0WWZDSXgzODA3WGVXRUdqWW1zUldMREx1NU1HeTFBaGdtTTVMRHdXQUprTkphYkV4b0N0RFlRQXZEX0J3RQ..*_gcl_au*MjA1NTY2NjY3NC4xNzIzNTU5MjQw*_ga*Mzc2MDI5MTEuMTcyMzU1OTI0MA..*_ga_460L9JMC2G*MTcyNDk0MzQ5Mi43LjEuMTcyNDk0NTE1Mi41Ni4wLjc5MzA3NzQ1OA.."
+      "images": ["https://cdn0.fahasa.com/media/catalog/product/n/g/nghigiaulamgiau_110k-01_bia_1.jpg?_gl=1*q7c3uk*_gcl_aw*R0NMLjE3MjQ5NDUxNDkuQ2p3S0NBand1TUMyQmhBN0Vpd0FtSktSckd0Z0l0WWZDSXgzODA3WGVXRUdqWW1zUldMREx1NU1HeTFBaGdtTTVMRHdXQUprTkphYkV4b0N0RFlRQXZEX0J3RQ..*_gcl_au*MjA1NTY2NjY3NC4xNzIzNTU5MjQw*_ga*Mzc2MDI5MTEuMTcyMzU1OTI0MA..*_ga_460L9JMC2G*MTcyNDk0MzQ5Mi43LjEuMTcyNDk0NTE1Mi41Ni4wLjc5MzA3NzQ1OA.."]
     },
     {
       "id": "7",
@@ -112,11 +127,13 @@
       "price": 169000,
       "rating": 4.8,
       "stock": 50,
+      "sold": 20,
+      "createAt": "2024-05-23T08:56:21.618Z",
       "tags": [
         "ketoanviahe",
         "sachkinhdoanh"
       ],
-      "images": "https://cdn0.fahasa.com/media/catalog/product/9/7/9786047787616_1.jpg"
+      "images": ["https://cdn0.fahasa.com/media/catalog/product/9/7/9786047787616_1.jpg"]
     },
     {
       "id": "8",
@@ -128,11 +145,13 @@
       "price": 118800,
       "rating": 4.8,
       "stock": 50,
+      "sold": 18,
+      "createAt": "2024-05-23T08:56:21.618Z",
       "tags": [
         "chientranhtientephannhat",
         "sachkinhdoanh"
       ],
-      "images": "https://cdn0.fahasa.com/media/catalog/product/b/i/bia-truoc-chien-tranh-tien-te-phan-1-1.jpg"
+      "images": ["https://cdn0.fahasa.com/media/catalog/product/b/i/bia-truoc-chien-tranh-tien-te-phan-1-1.jpg"]
     },
     {
       "id": "9",
@@ -144,11 +163,13 @@
       "price": 173600,
       "rating": 4.9,
       "stock": 50,
+      "sold": 14,
+      "createAt": "2024-05-23T08:56:21.618Z",
       "tags": [
         "thaydoicuocsongvoinhansohoc",
         "sachtamly"
       ],
-      "images": "https://cdn0.fahasa.com/media/catalog/product/t/d/tdcsvnsh.png?_gl=1*1rlmxbr*_gcl_aw*R0NMLjE3MjQ5NDU0MDUuQ2p3S0NBand1TUMyQmhBN0Vpd0FtSktSckd0Z0l0WWZDSXgzODA3WGVXRUdqWW1zUldMREx1NU1HeTFBaGdtTTVMRHdXQUprTkphYkV4b0N0RFlRQXZEX0J3RQ..*_gcl_au*MjA1NTY2NjY3NC4xNzIzNTU5MjQw*_ga*Mzc2MDI5MTEuMTcyMzU1OTI0MA..*_ga_460L9JMC2G*MTcyNDk0MzQ5Mi43LjEuMTcyNDk0NTQyNi44LjAuNzkzMDc3NDU4"
+      "images": ["https://cdn0.fahasa.com/media/catalog/product/t/d/tdcsvnsh.png?_gl=1*1rlmxbr*_gcl_aw*R0NMLjE3MjQ5NDU0MDUuQ2p3S0NBand1TUMyQmhBN0Vpd0FtSktSckd0Z0l0WWZDSXgzODA3WGVXRUdqWW1zUldMREx1NU1HeTFBaGdtTTVMRHdXQUprTkphYkV4b0N0RFlRQXZEX0J3RQ..*_gcl_au*MjA1NTY2NjY3NC4xNzIzNTU5MjQw*_ga*Mzc2MDI5MTEuMTcyMzU1OTI0MA..*_ga_460L9JMC2G*MTcyNDk0MzQ5Mi43LjEuMTcyNDk0NTQyNi44LjAuNzkzMDc3NDU4"]
     },
     {
       "id": "10",
@@ -160,11 +181,13 @@
       "price": 126400,
       "rating": 4.8,
       "stock": 50,
+      "sold": 16,
+      "createAt": "2024-05-23T08:56:21.618Z",
       "tags": [
         "hieuvetraitim",
         "sachtamly"
       ],
-      "images": "https://cdn0.fahasa.com/media/flashmagazine/images/page_images/hieu_ve_trai_tim_tai_ban_2023/2023_02_21_08_51_07_1-390x510.jpg?_gl=1*1blh95q*_gcl_aw*R0NMLjE3MjQ5NDU1MzAuQ2p3S0NBand1TUMyQmhBN0Vpd0FtSktSckd0Z0l0WWZDSXgzODA3WGVXRUdqWW1zUldMREx1NU1HeTFBaGdtTTVMRHdXQUprTkphYkV4b0N0RFlRQXZEX0J3RQ..*_gcl_au*MjA1NTY2NjY3NC4xNzIzNTU5MjQw*_ga*Mzc2MDI5MTEuMTcyMzU1OTI0MA..*_ga_460L9JMC2G*MTcyNDk0MzQ5Mi43LjEuMTcyNDk0NTUzNC41Ni4wLjc5MzA3NzQ1OA.."
+      "images": ["https://cdn0.fahasa.com/media/flashmagazine/images/page_images/hieu_ve_trai_tim_tai_ban_2023/2023_02_21_08_51_07_1-390x510.jpg?_gl=1*1blh95q*_gcl_aw*R0NMLjE3MjQ5NDU1MzAuQ2p3S0NBand1TUMyQmhBN0Vpd0FtSktSckd0Z0l0WWZDSXgzODA3WGVXRUdqWW1zUldMREx1NU1HeTFBaGdtTTVMRHdXQUprTkphYkV4b0N0RFlRQXZEX0J3RQ..*_gcl_au*MjA1NTY2NjY3NC4xNzIzNTU5MjQw*_ga*Mzc2MDI5MTEuMTcyMzU1OTI0MA..*_ga_460L9JMC2G*MTcyNDk0MzQ5Mi43LjEuMTcyNDk0NTUzNC41Ni4wLjc5MzA3NzQ1OA.."]
     },
     {
       "id": "11",
@@ -176,11 +199,13 @@
       "price": 134200,
       "rating": 4.9,
       "stock": 50,
+      "sold": 22,
+      "createAt": "2024-05-23T08:56:21.618Z",
       "tags": [
         "lythuyettrochoi",
         "sachtamly"
       ],
-      "images": "https://cdn0.fahasa.com/media/catalog/product/8/9/8936066697088.jpg"
+      "images": ["https://cdn0.fahasa.com/media/catalog/product/8/9/8936066697088.jpg"]
     },
     {
       "id": "12",
@@ -192,11 +217,13 @@
       "price": 134200,
       "rating": 4.9,
       "stock": 50,
+      "sold": 24,
+      "createAt": "2024-05-23T08:56:21.618Z",
       "tags": [
         "48nguyentacchuchotcuaquyenluc",
         "sachtamly"
       ],
-      "images": "https://cdn0.fahasa.com/media/flashmagazine/images/page_images/48_nguyen_tac_chu_chot_cua_quyen_luc_tai_ban_2020/2020_06_11_15_11_55_1-390x510.JPG?_gl=1*jqf605*_gcl_aw*R0NMLjE3MjQ5NDU2OTcuQ2p3S0NBand1TUMyQmhBN0Vpd0FtSktSckd0Z0l0WWZDSXgzODA3WGVXRUdqWW1zUldMREx1NU1HeTFBaGdtTTVMRHdXQUprTkphYkV4b0N0RFlRQXZEX0J3RQ..*_gcl_au*MjA1NTY2NjY3NC4xNzIzNTU5MjQw*_ga*Mzc2MDI5MTEuMTcyMzU1OTI0MA..*_ga_460L9JMC2G*MTcyNDk0MzQ5Mi43LjEuMTcyNDk0NTcwMS41NS4wLjc5MzA3NzQ1OA.."
+      "images": ["https://cdn0.fahasa.com/media/flashmagazine/images/page_images/48_nguyen_tac_chu_chot_cua_quyen_luc_tai_ban_2020/2020_06_11_15_11_55_1-390x510.JPG?_gl=1*jqf605*_gcl_aw*R0NMLjE3MjQ5NDU2OTcuQ2p3S0NBand1TUMyQmhBN0Vpd0FtSktSckd0Z0l0WWZDSXgzODA3WGVXRUdqWW1zUldMREx1NU1HeTFBaGdtTTVMRHdXQUprTkphYkV4b0N0RFlRQXZEX0J3RQ..*_gcl_au*MjA1NTY2NjY3NC4xNzIzNTU5MjQw*_ga*Mzc2MDI5MTEuMTcyMzU1OTI0MA..*_ga_460L9JMC2G*MTcyNDk0MzQ5Mi43LjEuMTcyNDk0NTcwMS41NS4wLjc5MzA3NzQ1OA.."]
     },
     {
       "id": "13",
@@ -208,11 +235,13 @@
       "price": 118000,
       "rating": 4.8,
       "stock": 50,
+      "sold": 26,
+      "createAt": "2024-05-23T08:56:21.618Z",
       "tags": [
         "destinationb1grammarandvocabularywithanswerkey",
         "sachngoaingu"
       ],
-      "images": "https://cdn0.fahasa.com/media/catalog/product/b/1/b1_4_4.jpg"
+      "images": ["https://cdn0.fahasa.com/media/catalog/product/b/1/b1_4_4.jpg"]
     },
     {
       "id": "14",
@@ -224,11 +253,13 @@
       "price": 154000,
       "rating": 4.9,
       "stock": 50,
+      "sold": 28,
+      "createAt": "2024-05-23T08:56:21.618Z",
       "tags": [
         "giaithichnguphaptienganh",
         "sachngoaingu"
       ],
-      "images": "https://cdn0.fahasa.com/media/catalog/product/g/i/giaithichnguphapta-tb2024_bia1_1.jpg?_gl=1*cmz0sb*_gcl_aw*R0NMLjE3MjQ5NDU4NjguQ2p3S0NBand1TUMyQmhBN0Vpd0FtSktSckd0Z0l0WWZDSXgzODA3WGVXRUdqWW1zUldMREx1NU1HeTFBaGdtTTVMRHdXQUprTkphYkV4b0N0RFlRQXZEX0J3RQ..*_gcl_au*MjA1NTY2NjY3NC4xNzIzNTU5MjQw*_ga*Mzc2MDI5MTEuMTcyMzU1OTI0MA..*_ga_460L9JMC2G*MTcyNDk0MzQ5Mi43LjEuMTcyNDk0NTg3MS41Ni4wLjc5MzA3NzQ1OA.."
+      "images": ["https://cdn0.fahasa.com/media/catalog/product/g/i/giaithichnguphapta-tb2024_bia1_1.jpg?_gl=1*cmz0sb*_gcl_aw*R0NMLjE3MjQ5NDU4NjguQ2p3S0NBand1TUMyQmhBN0Vpd0FtSktSckd0Z0l0WWZDSXgzODA3WGVXRUdqWW1zUldMREx1NU1HeTFBaGdtTTVMRHdXQUprTkphYkV4b0N0RFlRQXZEX0J3RQ..*_gcl_au*MjA1NTY2NjY3NC4xNzIzNTU5MjQw*_ga*Mzc2MDI5MTEuMTcyMzU1OTI0MA..*_ga_460L9JMC2G*MTcyNDk0MzQ5Mi43LjEuMTcyNDk0NTg3MS41Ni4wLjc5MzA3NzQ1OA.."]
     },
     {
       "id": "15",
@@ -240,11 +271,13 @@
       "price": 166000,
       "rating": 4.8,
       "stock": 50,
+      "sold": 30,
+      "createAt": "2024-05-23T08:56:21.618Z",
       "tags": [
         "giaotrinhchuanshk1",
         "sachngoaingu"
       ],
-      "images": "https://cdn0.fahasa.com/media/flashmagazine/images/page_images/giao_trinh_chuan_hsk_1_tai_ban_2023/2023_05_26_09_26_03_1-390x510.jpg?_gl=1*n3m65p*_gcl_aw*R0NMLjE3MjQ5NDU5NDQuQ2p3S0NBand1TUMyQmhBN0Vpd0FtSktSckd0Z0l0WWZDSXgzODA3WGVXRUdqWW1zUldMREx1NU1HeTFBaGdtTTVMRHdXQUprTkphYkV4b0N0RFlRQXZEX0J3RQ..*_gcl_au*MjA1NTY2NjY3NC4xNzIzNTU5MjQw*_ga*Mzc2MDI5MTEuMTcyMzU1OTI0MA..*_ga_460L9JMC2G*MTcyNDk0MzQ5Mi43LjEuMTcyNDk0NTk0Ni40My4wLjc5MzA3NzQ1OA.."
+      "images": ["https://cdn0.fahasa.com/media/flashmagazine/images/page_images/giao_trinh_chuan_hsk_1_tai_ban_2023/2023_05_26_09_26_03_1-390x510.jpg?_gl=1*n3m65p*_gcl_aw*R0NMLjE3MjQ5NDU5NDQuQ2p3S0NBand1TUMyQmhBN0Vpd0FtSktSckd0Z0l0WWZDSXgzODA3WGVXRUdqWW1zUldMREx1NU1HeTFBaGdtTTVMRHdXQUprTkphYkV4b0N0RFlRQXZEX0J3RQ..*_gcl_au*MjA1NTY2NjY3NC4xNzIzNTU5MjQw*_ga*Mzc2MDI5MTEuMTcyMzU1OTI0MA..*_ga_460L9JMC2G*MTcyNDk0MzQ5Mi43LjEuMTcyNDk0NTk0Ni40My4wLjc5MzA3NzQ1OA.."]
     },
     {
       "id": "16",
@@ -256,11 +289,13 @@
       "price": 115000,
       "rating": 4.8,
       "stock": 50,
+      "sold": 32,
+      "createAt": "2024-05-23T08:56:21.618Z",
       "tags": [
         "giaotrinhchuanyct1cd",
         "sachngoaingu"
       ],
-      "images": "https://cdn0.fahasa.com/media/flashmagazine/images/page_images/giao_trinh_chuan_yct_1_cd/2021_08_10_10_17_17_1-390x510.jpg?_gl=1*8fkex4*_gcl_aw*R0NMLjE3MjQ5NDU5OTkuQ2p3S0NBand1TUMyQmhBN0Vpd0FtSktSckd0Z0l0WWZDSXgzODA3WGVXRUdqWW1zUldMREx1NU1HeTFBaGdtTTVMRHdXQUprTkphYkV4b0N0RFlRQXZEX0J3RQ..*_gcl_au*MjA1NTY2NjY3NC4xNzIzNTU5MjQw*_ga*Mzc2MDI5MTEuMTcyMzU1OTI0MA..*_ga_460L9JMC2G*MTcyNDk0MzQ5Mi43LjEuMTcyNDk0NjAxOC40MC4wLjc5MzA3NzQ1OA.."
+      "images": ["https://cdn0.fahasa.com/media/flashmagazine/images/page_images/giao_trinh_chuan_yct_1_cd/2021_08_10_10_17_17_1-390x510.jpg?_gl=1*8fkex4*_gcl_aw*R0NMLjE3MjQ5NDU5OTkuQ2p3S0NBand1TUMyQmhBN0Vpd0FtSktSckd0Z0l0WWZDSXgzODA3WGVXRUdqWW1zUldMREx1NU1HeTFBaGdtTTVMRHdXQUprTkphYkV4b0N0RFlRQXZEX0J3RQ..*_gcl_au*MjA1NTY2NjY3NC4xNzIzNTU5MjQw*_ga*Mzc2MDI5MTEuMTcyMzU1OTI0MA..*_ga_460L9JMC2G*MTcyNDk0MzQ5Mi43LjEuMTcyNDk0NjAxOC40MC4wLjc5MzA3NzQ1OA.."]
     }
   ],
   "categories": [

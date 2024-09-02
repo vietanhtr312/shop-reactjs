@@ -11,6 +11,7 @@ import ProductList from "../../components/ProductList";
 import { fetchAsyncProducts, getAllProducts, getAllProductsStatus } from "../../store/productSlice";
 import { fetchAsyncCategories, getAllCategories } from "../../store/categorySlice";
 import { STATUS } from "../../utils/status";
+import { ROUTERS } from "../../utils/router";
 
 const cx = classNames.bind(styles);
 
@@ -108,12 +109,12 @@ function Home() {
             <div className={cx("banner-wrapper")}>
                 <div className={cx("banner")}>
                     <div className="row">
-                        <div className={cx("banner-pic col l-6 m-6 c-12")}>
+                        <Link to={ROUTERS.USER.PRODUCTS} className={cx("banner-pic col l-6 m-6 c-12")}>
                             <img src={bannerImg.banner1} alt="Banner" />
-                        </div>
-                        <div className={cx("banner-pic col l-6 m-6 c-12")}>
+                        </Link>
+                        <Link to={ROUTERS.USER.PRODUCTS} className={cx("banner-pic col l-6 m-6 c-12")}>
                             <img src={bannerImg.banner2} alt="Banner" />
-                        </div>
+                        </Link>
                     </div>
                 </div>
 
