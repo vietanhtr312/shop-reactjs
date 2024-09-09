@@ -12,12 +12,13 @@ import { formatPrice } from '../../../utils/formarter';
 
 const cx = classNames.bind(styles);
 
-function Header(...props) {
+function Header({ ...props }) {
     const dispatch = useDispatch();
     const carts = useSelector(getAllCart);
     const { itemsCount, totalAmount } = useSelector(state => state.cart);
     const categories = useSelector(getAllCategories);
     const [searchTerm, setSearchTerm] = useState('');
+    const { setLoggedIn, loggedIn, email } = props;
 
     const handleSearchTerm = (e) => {
         e.preventDefault();
@@ -127,23 +128,21 @@ function Header(...props) {
                             </Link>
                         </li>
 
-                        {/* <!-- <li className={cx()}"nav__item nav__item--separate">
-                        <a href="" className={cx()}"nav__item--strong nav__item-link">Đăng ký</a>
-                    </li>
-                    <li className={cx()}"nav__item">
-                        <a href="" className={cx()}"nav__item--strong nav__item-link">Đăng nhập</a>
-                    </li> --> */}
-
-                        <li className={cx("nav__item", "nav-user")}>
-                            <img src="./asset/img/avatar.jpg" alt="" />
-                            <span>Viet Anh</span>
+                        {loggedIn ? (<li className={cx("nav__item", "nav-user")}>
+                            <i className={cx("fa-regular fa-user")}></i>
+                            <span>{email}</span>
                             <ul >
                                 <li><Link to={ROUTERS.USER.HOME}>Tài khoản của tôi</Link></li>
                                 <li><Link to="">Địa chỉ</Link></li>
                                 <li><Link to="">Đơn mua</Link></li>
-                                <li><Link to="">Đăng xuất</Link></li>
+                                <li onClick={() => {
+                                    localStorage.removeItem('user')
+                                    setLoggedIn(false)
+                                }}><Link to="">Đăng xuất</Link></li>
                             </ul>
-                        </li>
+                        </li>) : <li className={cx("nav__item")}>
+                            <Link to="/login" className={cx("nav__item--strong", "nav__item-link")}>Đăng nhập</Link>
+                        </li>}
                     </ul>
                 </nav>
 
@@ -156,10 +155,10 @@ function Header(...props) {
                         <div className='col l-8 m-6 c-0'>
                             <div className={cx("search")}>
                                 <div className={cx("search-input-wrap")}>
-                                    <input type="search" placeholder="Tìm kiếm sản phẩm" spellCheck={false} onChange={(e) => handleSearchTerm(e)}/>
+                                    <input type="search" placeholder="Tìm kiếm sản phẩm" spellCheck={false} onChange={(e) => handleSearchTerm(e)} />
                                 </div>
-                                <Link to= {`search/${searchTerm}`}><button><i className={cx("fa-solid fa-magnifying-glass")}></i></button></Link>
-                            </div>  
+                                <Link to={`search/${searchTerm}`}><button><i className={cx("fa-solid fa-magnifying-glass")}></i></button></Link>
+                            </div>
                         </div>
 
                         <div className={cx("cart", "col l-2 m-0 c-0")}>
@@ -190,7 +189,7 @@ function Header(...props) {
 
                         <div style={{ marginTop: 10 }} className={cx("search", "col l-0 m-0 c-12")}>
                             <div className={cx("search-input-wrap")}>
-                                <input type="search" placeholder="Tìm kiếm sản phẩm" spellCheck={false} onChange={(e) => handleSearchTerm(e)}/>
+                                <input type="search" placeholder="Tìm kiếm sản phẩm" spellCheck={false} onChange={(e) => handleSearchTerm(e)} />
                             </div>
                             <Link to={`search/${searchTerm}`}><button><i className={cx("fa-solid fa-magnifying-glass")}></i></button></Link>
                         </div>

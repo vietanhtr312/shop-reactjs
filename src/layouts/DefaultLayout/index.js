@@ -3,9 +3,11 @@ import Footer from "../components/Footer";
 import Category from "./Category";
 
 function DefaultLayout({ children, ...props }) {
+    const { setLoggedIn, loggedIn, email } = props
+
     return (
-        <div {...props}>
-            <Header />
+        <div>
+            <Header setLoggedIn={setLoggedIn} loggedIn={loggedIn} email={email}/>
             <div className="container" style={{}}>
                 <div>
                     <Category />
