@@ -1,10 +1,8 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
-import store from './store/store';
-import { Provider } from 'react-redux';
+import { Navigate, useRoutes } from 'react-router-dom'
 import { useEffect, useState } from 'react'
 import DefaultLayout from './layouts/DefaultLayout'
+import CompactHeader from './layouts/CompactHeader';
 import { Home, CategoryProduct, Cart, Products, ProductDetail, Search, Login } from './pages';
-import { ROUTERS } from './utils/router';
 
 function App() {
   const [loggedIn, setLoggedIn] = useState(false)
@@ -12,12 +10,12 @@ function App() {
 
   useEffect(() => {
     const user = JSON.parse(localStorage.getItem('user'))
-  
+
     if (!user || !user.token) {
       setLoggedIn(false)
       return
     }
-  
+
     fetch('http://localhost:3080/verify', {
       method: 'POST',
       headers: {
@@ -31,49 +29,49 @@ function App() {
       })
   }, [])
 
-  const userRouters = [
+  const routes = useRoutes([
     {
-        path: ROUTERS.USER.HOME,
-        component: <Home />,
+      path: "/",
+      element: <DefaultLayout setLoggedIn={setLoggedIn} email={email} loggedIn={loggedIn} />,
+      children: [
+        {
+          path: "/",
+          element: <Home />,
+        },
+        {
+          path: "products",
+          element: <Products />,
+        },
+        {
+          path: "products/product/:id",
+          element: <ProductDetail />,
+        },
+        {
+          path: "products/category/:category",
+          element: <CategoryProduct />,
+        },
+        {
+          path: "search/:searchTerm",
+          element: <Search />,
+        }
+      ],
     },
     {
-        path: ROUTERS.USER.PRODUCTS,
-        component: <Products />,
+      path: "/",
+      element: <CompactHeader setLoggedIn={setLoggedIn} email={email} loggedIn={loggedIn} />,
+      children: [
+        {
+          path: "cart",
+          element: <Cart />,
+        },
+      ],
     },
     {
-        path: ROUTERS.USER.PRODUCT,
-        component: <ProductDetail />,
-    },
-    {
-        path: ROUTERS.USER.CART,
-        component: <Cart />,
-    },
-    {
-        path: ROUTERS.USER.CATEGORYPRODUCT,
-        component: <CategoryProduct />,
-    },
-    {
-        path: ROUTERS.USER.SEARCH,
-        component: <Search />,
+      path: "/login",
+      element: <Login email={email} setLoggedIn={setLoggedIn} setEmail={setEmail}/>,
     }
-];
-
-  return (
-    <div>
-      <Provider store={store}>
-        <BrowserRouter>
-        <DefaultLayout email={email} loggedIn={loggedIn} setLoggedIn={setLoggedIn}>
-            <Routes>
-                {userRouters.map((item, key) => (
-                    <Route key={key} path={item.path} element={item.component} />
-                ))}
-                 <Route path="/login" element={<Login setLoggedIn={setLoggedIn} setEmail={setEmail} />} />
-            </Routes>
-        </DefaultLayout>
-        </BrowserRouter>
-      </Provider>
-    </div>
-  )
+  ]);
+  return routes;
 }
 
 export default App;

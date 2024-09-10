@@ -11,7 +11,9 @@ const cx = classNames.bind(styles);
 
 function Category() {
     const location = useLocation();
-    const [isHome, setIsHome] = useState(location.pathname.length <= 1);
+    const bool = location.pathname === '/home';
+    const [isHome, setIsHome] = useState(bool);
+    console.log(isHome);
     const [isShowCategory, setIsShowCategory] = useState(isHome);
     const dispatch = useDispatch();
     useEffect(() => {

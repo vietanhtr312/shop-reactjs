@@ -1,6 +1,8 @@
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import './style.css'
+import Header from '../../layouts/CompactHeader/Header'
+import Footer from '../../layouts/components/Footer'
 
 const Login = (props) => {
   const [email, setEmail] = useState('')
@@ -84,41 +86,45 @@ const Login = (props) => {
   }
 
   return (
-    <div className={'wrapper'}>
-      <div className={'smallContainer'} style={{ backgroundImage: 'url(https://down-vn.img.susercontent.com/file/sg-11134004-7rdww-lz7fzhaqivg745)' }}>
-        <div className={'mainContainer'}>
-          <div className={'titleContainer'}>
-            <div>Đăng nhập</div>
-          </div>
-          <br />
-          <div className={'inputContainer'}>
-            <label>Email</label>
-            <input
-              value={email}
-              placeholder="Nhập email của bạn"
-              onChange={(ev) => setEmail(ev.target.value)}
-              className={'inputBox'}
-            />
-            <label className="errorLabel">{emailError}</label>
-          </div>
-          <br />
-          <div className={'inputContainer'}>
-            <label>Mật khẩu</label>
-            <input
-              value={password}
-              placeholder="Nhập mật khẩu của bạn"
-              onChange={(ev) => setPassword(ev.target.value)}
-              className={'inputBox'}
-              type='password'
-            />
-            <label className="errorLabel">{passwordError}</label>
-          </div>
-          <br />
-          <div className={'inputContainer'}>
-            <input className={'btn btn--primary'} type="button" onClick={onButtonClick} value={'Đăng nhập'} />
+    <div>
+      <Header name={'Đăng nhập'}/>
+      <div className={'wrapper'}>
+        <div className={'smallContainer'} style={{ backgroundImage: 'url(https://down-vn.img.susercontent.com/file/sg-11134004-7rdww-lz7fzhaqivg745)' }}>
+          <div className={'mainContainer'}>
+            <div className={'titleContainer'}>
+              <div>Đăng nhập</div>
+            </div>
+            <br />
+            <div className={'inputContainer'}>
+              <label>Email</label>
+              <input
+                value={email}
+                placeholder="Nhập email của bạn"
+                onChange={(ev) => setEmail(ev.target.value)}
+                className={'inputBox'}
+              />
+              <label className="errorLabel">{emailError}</label>
+            </div>
+            <br />
+            <div className={'inputContainer'}>
+              <label>Mật khẩu</label>
+              <input
+                value={password}
+                placeholder="Nhập mật khẩu của bạn"
+                onChange={(ev) => setPassword(ev.target.value)}
+                className={'inputBox'}
+                type='password'
+              />
+              <label className="errorLabel">{passwordError}</label>
+            </div>
+            <br />
+            <div className={'inputContainer'}>
+              <input className={'btn btn--primary'} type="button" onClick={onButtonClick} value={'Đăng nhập'} />
+            </div>
           </div>
         </div>
       </div>
+      <Footer />
     </div>
   )
 }
