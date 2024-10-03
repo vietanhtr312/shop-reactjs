@@ -2,7 +2,7 @@ import { Navigate, useRoutes } from 'react-router-dom'
 import { useEffect, useState } from 'react'
 import DefaultLayout from './layouts/DefaultLayout'
 import CompactHeader from './layouts/CompactHeader';
-import { Home, CategoryProduct, Cart, Products, ProductDetail, Search, Login } from './pages';
+import { Home, CategoryProduct, Cart, Products, ProductDetail, Search, Login, Payment } from './pages';
 
 function App() {
   const [loggedIn, setLoggedIn] = useState(false)
@@ -64,6 +64,10 @@ function App() {
           path: "cart",
           element: <Cart />,
         },
+        {
+          path: "payment",
+          element: <Payment />,
+        }
       ],
     },
     {
